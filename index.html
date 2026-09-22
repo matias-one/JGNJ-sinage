@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor Signage Package Specifications</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Bebas Neue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                    },
+                    colors: {
+                        jamali: {
+                            dark: '#1e201d',
+                            accent: '#8b5a2b',
+                            light: '#f5f3ef',
+                            border: '#e2dec9',
+                            muted: '#6b6659'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Grid pattern background for preview canvas */
+        .bg-grid-pattern {
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        }
+
+        /* Print optimization */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .print-full-width {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+            .page-break-inside-avoid {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-slate-800 selection:text-white">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2.5 bg-slate-900 text-white rounded-lg shadow-md">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">Indoor Signage Specifications</h1>
+                        <p class="text-xs sm:text-sm text-slate-500">Package Specs & Reference Guidelines (PVC Spec)</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <button onclick="openImageGuideModal()" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-medium bg-emerald-700 text-white hover:bg-emerald-800 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-700">
+                        <i data-lucide="image" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Image Setup Guide</span>
+                    </button>
+                    <button onclick="window.print()" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-medium bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Print Specification Sheet</span>
+                        <span class="sm:hidden">Print</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        
+        <!-- Vendor Recommendation Notice -->
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 sm:p-5 mb-6 shadow-sm">
+            <div class="flex items-start space-x-3.5">
+                <div class="p-2 bg-emerald-600 text-white rounded-lg flex-shrink-0 mt-0.5">
+                    <i data-lucide="check-circle" class="w-5 h-5"></i>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h2 class="text-sm font-bold text-emerald-950 uppercase tracking-wide">Material Update Notice: Expanded PVC Board Selected</h2>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-200/80 text-emerald-900">
+                            Vendor Recommended
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-emerald-900 mt-1 leading-relaxed">
+                        Based on vendor advice, <strong>Expanded PVC Board (Sintra / Komatex 3mm & 6mm)</strong> has been selected to replace ACM (Aluminum Composite Material). PVC provides significant weight reduction for suspended ceiling signs, smooth direct UV printing, clean smooth edges, easier mounting, and improved cost-efficiency for indoor retail environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Specifications Grid -->
+        <div class="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 mb-6 sm:mb-8 shadow-sm">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+                <div class="pt-2 md:pt-0">
+                    <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Typography Standard</span>
+                    <p class="text-lg font-bold text-slate-900 mt-1 font-bebas tracking-wide">Bebas Neue</p>
+                </div>
+                <div class="pt-2 md:pt-0 md:pl-4">
+                    <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Primary Material</span>
+                    <p class="text-sm font-semibold text-emerald-700 mt-1">Expanded PVC Board (3mm / 6mm)</p>
+                </div>
+                <div class="pt-2 md:pt-0 md:pl-4">
+                    <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Total Sign Types</span>
+                    <p class="text-lg font-bold text-slate-900 mt-1">5 Core Categories</p>
+                </div>
+                <div class="pt-2 md:pt-0 md:pl-4">
+                    <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Hardware Standard</span>
+                    <p class="text-sm font-medium text-slate-700 mt-1">Ceiling Wire & ⅜″ Grommets</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="flex flex-wrap items-center gap-2 mb-6 no-print">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mr-2">Filter View:</span>
+            <button onclick="filterSigns('all')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white transition-all shadow-sm">
+                All Items (5)
+            </button>
+            <button onclick="filterSigns('ceiling')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                Ceiling Suspended
+            </button>
+            <button onclick="filterSigns('shelf')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                Shelf-Top Markers
+            </button>
+            <button onclick="filterSigns('custom')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
+                Designed & Modular
+            </button>
+        </div>
+
+        <!-- Signage Items Container -->
+        <div class="space-y-8" id="signage-list">
+
+            <!-- ITEM 1: CEILING SUSPENDED DEPARTMENT SIGNS -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="ceiling">
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">1</span>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Ceiling Suspended Department Signs</h2>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                        2 Signs Total (COUNTER & SHOWROOM)
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
+                            
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Total Quantity:</span>
+                                    <span class="font-bold text-slate-900">2 Signs</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Sign Labels:</span>
+                                    <span class="font-bold text-indigo-700">"COUNTER" & "SHOWROOM"</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Dimensions:</span>
+                                    <span class="font-semibold text-slate-900">36in W × 12in H</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Material:</span>
+                                    <span class="font-semibold text-emerald-700">6mm Expanded PVC Board</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Printing:</span>
+                                    <span class="font-medium text-slate-900">Direct UV Print (Double-Sided)</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Font Standard:</span>
+                                    <span class="font-medium text-slate-900">Bebas Neue</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Mounting Hardware:</span>
+                                    <span class="font-medium text-slate-900">2 Grommets + Ceiling Chain Kit</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 bg-indigo-50/60 rounded-xl text-xs text-indigo-900 border border-indigo-100">
+                            <strong class="font-semibold block mb-1">Installation Note:</strong> Hang at a minimum clearance of 8'-6" above floor level along main showroom sightlines.
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+                        <!-- Toggle Tab for Mockup vs Reference Image -->
+                        <div class="flex items-center justify-between mb-3 no-print">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
+                            <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                <button onclick="switchView('item1', 'mockup', this)" class="item1-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">CSS Mockup</button>
+                                <button onclick="switchView('item1', 'image', this)" class="item1-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- View A: Generated CSS Mockup -->
+                        <div id="item1-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col sm:flex-row items-center justify-center gap-6 min-h-[240px]">
+                            <div class="flex flex-col items-center">
+                                <div class="w-36 flex justify-between px-3 mb-[-4px] z-10 no-print">
+                                    <div class="w-0.5 h-5 bg-slate-400"></div>
+                                    <div class="w-0.5 h-5 bg-slate-400"></div>
+                                </div>
+                                <div class="w-48 bg-slate-900 text-white px-4 py-4 rounded shadow-lg text-center relative border-2 border-slate-800">
+                                    <div class="absolute top-2 left-2.5 w-2 h-2 rounded-full bg-slate-400 border border-slate-600"></div>
+                                    <div class="absolute top-2 right-2.5 w-2 h-2 rounded-full bg-slate-400 border border-slate-600"></div>
+                                    <span class="font-bebas text-2xl tracking-widest block leading-none">COUNTER</span>
+                                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-1 block">36" × 12" Double-Sided</span>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-700 mt-2">Sign 1: COUNTER</span>
+                            </div>
+
+                            <div class="flex flex-col items-center">
+                                <div class="w-36 flex justify-between px-3 mb-[-4px] z-10 no-print">
+                                    <div class="w-0.5 h-5 bg-slate-400"></div>
+                                    <div class="w-0.5 h-5 bg-slate-400"></div>
+                                </div>
+                                <div class="w-48 bg-slate-900 text-white px-4 py-4 rounded shadow-lg text-center relative border-2 border-slate-800">
+                                    <div class="absolute top-2 left-2.5 w-2 h-2 rounded-full bg-slate-400 border border-slate-600"></div>
+                                    <div class="absolute top-2 right-2.5 w-2 h-2 rounded-full bg-slate-400 border border-slate-600"></div>
+                                    <span class="font-bebas text-2xl tracking-widest block leading-none">SHOWROOM</span>
+                                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-1 block">36" × 12" Double-Sided</span>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-700 mt-2">Sign 2: SHOWROOM</span>
+                            </div>
+                        </div>
+
+                        <!-- View B: GitHub Reference Photo Container -->
+                        <div id="item1-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[240px]">
+                            <div class="relative w-full max-w-md group">
+                                <img id="item1-img-tag" src="images/ceiling-suspended-ref.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/ceiling-suspended-ref.jpg';" 
+                                     alt="Vendor Reference - Ceiling Suspended Sign" 
+                                     class="w-full h-auto max-h-56 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span class="font-mono text-emerald-400">Path: images/ceiling-suspended-ref.jpg</span>
+                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                        Test Local Image
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item1-img-tag')">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Reference photo for visual placement and style guidance only. Do not print directly from low-res image files.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ITEM 2: AISLE / DIRECTIONAL MARKERS -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="ceiling">
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">2</span>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Aisle Wayfinding Markers (Number Only)</h2>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                        10 Signs Total (Aisles 01–10)
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
+                            
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Total Quantity:</span>
+                                    <span class="font-bold text-slate-900">10 Signs (01 to 10)</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Dimensions:</span>
+                                    <span class="font-semibold text-slate-900">18in W × 24in H</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Material:</span>
+                                    <span class="font-semibold text-emerald-700">6mm Expanded PVC Board</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Printing:</span>
+                                    <span class="font-medium text-slate-900">Direct UV Print (Double-Sided)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Design Format:</span>
+                                    <span class="font-bold text-indigo-700">Numbers Only (No text listings)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 bg-slate-100 rounded-xl text-xs text-slate-600 border border-slate-200/60">
+                            <strong>Design Note:</strong> Bold, high-contrast numbers centered on board for clean, uncluttered wayfinding.
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3 no-print">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
+                            <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                <button onclick="switchView('item2', 'mockup', this)" class="item2-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Interactive Mockup</button>
+                                <button onclick="switchView('item2', 'image', this)" class="item2-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- View A: Interactive Mockup -->
+                        <div id="item2-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[240px]">
+                            <div id="aisle-preview-card" class="w-40 h-52 bg-white text-slate-900 border-2 border-slate-900 p-4 shadow-md text-center flex flex-col items-center justify-center transition-all duration-200">
+                                <span class="text-[10px] text-slate-400 font-mono tracking-widest block mb-2 uppercase">AISLE</span>
+                                <span id="aisle-preview-number" class="font-bebas text-7xl font-bold leading-none block my-auto">01</span>
+                                <span class="text-[9px] text-slate-400 font-mono border-t border-slate-200 pt-1.5 w-full mt-auto">
+                                    18" × 24" PVC Marker
+                                </span>
+                            </div>
+                            
+                            <div class="flex flex-wrap justify-center gap-1.5 mt-4 no-print" id="aisle-num-selector">
+                                <button onclick="updateAislePreview(this, '01')" class="aisle-btn w-8 h-8 rounded border-2 border-slate-900 bg-slate-900 text-white font-bebas text-sm transition-all">01</button>
+                                <button onclick="updateAislePreview(this, '02')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">02</button>
+                                <button onclick="updateAislePreview(this, '03')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">03</button>
+                                <button onclick="updateAislePreview(this, '04')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">04</button>
+                                <button onclick="updateAislePreview(this, '05')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">05</button>
+                                <button onclick="updateAislePreview(this, '06')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">06</button>
+                                <button onclick="updateAislePreview(this, '07')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">07</button>
+                                <button onclick="updateAislePreview(this, '08')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">08</button>
+                                <button onclick="updateAislePreview(this, '09')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">09</button>
+                                <button onclick="updateAislePreview(this, '10')" class="aisle-btn w-8 h-8 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-sm transition-all">10</button>
+                            </div>
+                        </div>
+
+                        <!-- View B: GitHub Reference Photo Container -->
+                        <div id="item2-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[240px]">
+                            <div class="relative w-full max-w-md group">
+                                <img id="item2-img-tag" src="images/aisle-markers-ref.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/aisle-markers-ref.jpg';" 
+                                     alt="Vendor Reference - Aisle Markers" 
+                                     class="w-full h-auto max-h-56 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span class="font-mono text-emerald-400">Path: images/aisle-markers-ref.jpg</span>
+                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                        Test Local Image
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item2-img-tag')">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Visual sample showing number scaling and board proportions.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ITEM 3: SHELF-TOP CATEGORY MARKERS -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="shelf">
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">3</span>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Shelf-Top Category Markers (Text-Only)</h2>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        Gondola Shelf Integration
+                    </span>
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- Specs -->
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
+                                
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                        <span class="text-slate-500">Dimensions:</span>
+                                        <span class="font-semibold text-slate-900">48in L × 6–8in H</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                        <span class="text-slate-500">Material Options:</span>
+                                        <span class="font-semibold text-emerald-700">PVC Board (3mm or 6mm Sintra)</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                        <span class="text-slate-500">Font:</span>
+                                        <span class="font-medium text-slate-900">Bebas Neue</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                        <span class="text-slate-500">Colorways:</span>
+                                        <span class="font-medium text-slate-900">Black/White or Jamali Garden</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-500">Design Type:</span>
+                                        <span class="font-medium text-slate-900">Text-Only Boards (No graphics)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 bg-slate-100/80 rounded-xl text-xs text-slate-600 border border-slate-200/60">
+                                <strong class="text-slate-900">Design Rationale:</strong> The 48-inch length matches standard gondola shelves exactly, keeping signage clean, consistent, and easy to read across open showroom views.
+                            </div>
+                        </div>
+
+                        <!-- Live Interactive Category Preview & Photo Switcher -->
+                        <div class="lg:col-span-7 flex flex-col justify-between">
+                            <div class="flex items-center justify-between mb-3 no-print">
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
+                                <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                    <button onclick="switchView('item3', 'mockup', this)" class="item3-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Interactive Mockup</button>
+                                    <button onclick="switchView('item3', 'image', this)" class="item3-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                                </div>
+                            </div>
+                            
+                            <!-- View A: Interactive Mockup -->
+                            <div id="item3-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[180px]">
+                                <div id="category-preview-card" class="w-full bg-white text-black border-2 border-black px-6 py-6 shadow-md text-center flex items-center justify-center rounded-sm transition-all duration-200">
+                                    <span id="category-preview-text" class="font-bebas text-4xl sm:text-5xl tracking-wider leading-none uppercase">CERAMIC VASES</span>
+                                </div>
+                                <span class="text-xs text-slate-400 font-mono mt-3">48" × 6"-8" Text-Only PVC Shelf Marker</span>
+                            </div>
+
+                            <!-- View B: Reference Photo Container -->
+                            <div id="item3-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[180px]">
+                                <div class="relative w-full max-w-md group">
+                                    <img id="item3-img-tag" src="images/shelf-top-ref.jpg" 
+                                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e201d/ffffff?text=Upload+Reference+Image+to+images/shelf-top-ref.jpg';" 
+                                         alt="Vendor Reference - Shelf-Top Markers" 
+                                         class="w-full h-auto max-h-52 object-contain rounded-lg border border-slate-700 shadow-md">
+                                    <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                        <span class="font-mono text-emerald-400">Path: images/shelf-top-ref.jpg</span>
+                                        <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                            Test Local Image
+                                            <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item3-img-tag')">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                    <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Demonstrates physical mounting above gondola shelves.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Items Grid -->
+                    <div>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Required Categories List (10 Items)</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5" id="category-list">
+                            <button onclick="updateCategoryPreview(this, 'Ceramic')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">01</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Ceramic</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Ceramic Vases')" class="category-btn active p-3 bg-white hover:bg-slate-50 border-2 border-slate-900 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">02</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Ceramic Vases</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Pots / Planters')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">03</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Pots / Planters</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Metal Containers')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">04</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Metal Containers</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Glazed Ceramics')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">05</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Glazed Ceramics</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Floral Supplies')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">06</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Floral Supplies</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Candles')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">07</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Candles</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Fencing / Dividers')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">08</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Fencing / Dividers</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Wood Containers')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">09</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Wood Containers</span>
+                            </button>
+                            <button onclick="updateCategoryPreview(this, 'Natural Fiber Baskets')" class="category-btn p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg text-left transition-all">
+                                <span class="text-xs text-slate-400 font-mono block mb-1">10</span>
+                                <span class="font-bebas text-lg text-slate-900 tracking-wide block">Natural Fiber Baskets</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ITEM 4: ZONE TRANSITION HEADER -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="custom">
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">4</span>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Zone Transition Header (Designed Piece)</h2>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200">
+                        Modular Graphic Sign
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+                    <!-- Specs Column -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications (Final)</h3>
+                            
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Recommended Size:</span>
+                                    <span class="font-semibold text-slate-900">24in × 36in</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Material:</span>
+                                    <span class="font-semibold text-emerald-700">6mm Expanded PVC Board</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Printing:</span>
+                                    <span class="font-semibold text-slate-900">Full‑color UV direct print</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Orientation:</span>
+                                    <span class="font-semibold text-slate-900">Double‑Sided</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Store‑Facing Side:</span>
+                                    <span class="font-bold text-slate-900">STORE</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Back‑Area‑Facing Side:</span>
+                                    <span class="font-bold text-slate-900">BACK AREA</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Mounting Hardware:</span>
+                                    <span class="font-medium text-slate-900 text-right">
+                                        2 Grommets (top‑left & top‑right)<br>
+                                        <span class="text-xs text-slate-500">⅜″ dia, 1″ inset, ceiling chain</span>
+                                    </span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Vendor Task:</span>
+                                    <span class="font-medium text-slate-900 text-right">
+                                        Recreate artwork at full resolution<br>
+                                        <span class="text-xs text-rose-600 font-semibold">(do not print screenshot)</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modular Design System Info Box -->
+                        <div class="p-4 bg-purple-50/70 rounded-xl text-xs text-purple-900 border border-purple-100 space-y-3">
+                            <strong class="font-bold block text-purple-950 uppercase tracking-wide">Modular Design System (Final)</strong>
+                            <p class="leading-relaxed">
+                                The <strong>three internal white rectangles</strong> are intentional modular slots. They hold interchangeable category cards sized <strong>20in × 6in</strong>, allowing categories to be updated without reprinting the main header.
+                            </p>
+                            
+                            <div class="pt-2 border-t border-purple-200/60 space-y-2">
+                                <span class="font-bold text-purple-950 block">Category Cards (6 Total):</span>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                    <div class="bg-white p-2.5 rounded-lg border border-purple-200 shadow-sm">
+                                        <span class="font-bold text-slate-900 block mb-1 uppercase tracking-wider text-[10px] text-purple-800">Store Side:</span>
+                                        <ul class="space-y-1 font-mono text-slate-700">
+                                            <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>PLANTS</li>
+                                            <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>FENCING / DIVIDERS</li>
+                                            <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>CANDLES</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-white p-2.5 rounded-lg border border-purple-200 shadow-sm">
+                                        <span class="font-bold text-slate-900 block mb-1 uppercase tracking-wider text-[10px] text-purple-800">Back Area Side:</span>
+                                        <ul class="space-y-1 font-mono text-slate-700">
+                                            <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>COUNTER</li>
+                                            <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>FLORAL SUPPLIES</li>
+                                            <li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>METAL VASES</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Preview Column -->
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3 no-print">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
+                            <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                <button onclick="switchView('item4', 'mockup', this)" class="item4-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">CSS Blueprint</button>
+                                <button onclick="switchView('item4', 'image', this)" class="item4-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- View A: Modular Wireframe Blueprint -->
+                        <div id="item4-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[320px]">
+                            
+                            <div class="w-56 flex justify-between px-3 mb-[-6px] z-10 no-print">
+                                <div class="w-0.5 h-8 bg-slate-400"></div>
+                                <div class="w-0.5 h-8 bg-slate-400"></div>
+                            </div>
+
+                            <div class="w-64 h-88 bg-white border-2 border-slate-900 rounded-sm p-4 shadow-xl flex flex-col justify-between relative">
+                                <div class="absolute top-2 left-3 w-3 h-3 rounded-full border-2 border-slate-600 bg-slate-200 flex items-center justify-center shadow-inner">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-slate-100 border border-slate-400"></div>
+                                </div>
+                                <div class="absolute top-2 right-3 w-3 h-3 rounded-full border-2 border-slate-600 bg-slate-200 flex items-center justify-center shadow-inner">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-slate-100 border border-slate-400"></div>
+                                </div>
+
+                                <div class="border-b-2 border-slate-900 pb-2 text-center pt-2">
+                                    <span class="font-bebas text-2xl text-slate-900 block leading-none">STORE</span>
+                                    <span class="text-[9px] font-semibold uppercase tracking-widest text-slate-500">Zone Transition Header (Side A)</span>
+                                </div>
+                                
+                                <div class="space-y-2.5 my-3">
+                                    <div class="p-2 border-2 border-dashed border-purple-300 bg-purple-50/50 text-center rounded flex items-center justify-between">
+                                        <span class="text-[10px] font-mono text-purple-700 font-semibold">[Slot 1]</span>
+                                        <span class="font-bebas text-sm text-slate-900 tracking-wide">PLANTS</span>
+                                        <span class="text-[9px] font-mono text-slate-400">20"×6"</span>
+                                    </div>
+                                    <div class="p-2 border-2 border-dashed border-purple-300 bg-purple-50/50 text-center rounded flex items-center justify-between">
+                                        <span class="text-[10px] font-mono text-purple-700 font-semibold">[Slot 2]</span>
+                                        <span class="font-bebas text-sm text-slate-900 tracking-wide">FENCING / DIVIDERS</span>
+                                        <span class="text-[9px] font-mono text-slate-400">20"×6"</span>
+                                    </div>
+                                    <div class="p-2 border-2 border-dashed border-purple-300 bg-purple-50/50 text-center rounded flex items-center justify-between">
+                                        <span class="text-[10px] font-mono text-purple-700 font-semibold">[Slot 3]</span>
+                                        <span class="font-bebas text-sm text-slate-900 tracking-wide">CANDLES</span>
+                                        <span class="text-[9px] font-mono text-slate-400">20"×6"</span>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-[9px] text-slate-400 pt-2 border-t border-slate-200 flex justify-between items-center">
+                                    <span>2 Grommets (⅜" dia)</span>
+                                    <span class="font-semibold text-purple-900">Double-Sided PVC</span>
+                                </div>
+                            </div>
+
+                            <span class="text-xs text-slate-500 font-mono mt-3">24" × 36" 6mm PVC Board • Double-Sided (STORE / BACK AREA)</span>
+                        </div>
+
+                        <!-- View B: Reference Photo Container -->
+                        <div id="item4-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[320px]">
+                            <div class="relative w-full max-w-md group">
+                                <img id="item4-img-tag" src="images/zone-header-ref.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/1e201d/ffffff?text=Upload+Reference+Image+to+images/zone-header-ref.jpg';" 
+                                     alt="Vendor Reference - Zone Transition Header" 
+                                     class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span class="font-mono text-emerald-400">Path: images/zone-header-ref.jpg</span>
+                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                        Test Local Image
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item4-img-tag')">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-2 bg-rose-500/10 border border-rose-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-rose-300 font-medium">⚠️ IMPORTANT FOR MUKARAM: Recreate vector graphic layout using provided vector fonts & branding. Do not upscale preview screenshot!</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ITEM 5: FLOOR DECALS -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="custom">
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">5</span>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Floor Decals (Designed Piece)</h2>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
+                        High-Durability Floor Graphics
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
+                            
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Media Type:</span>
+                                    <span class="font-semibold text-slate-900">Heavy-duty slip-resistant floor vinyl</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Lamination:</span>
+                                    <span class="font-medium text-slate-900">Anti-slip commercial textured laminate</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Vendor Instructions:</span>
+                                    <span class="font-medium text-slate-900">Recreate reference cleanly for large format</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 bg-slate-100 rounded-xl text-xs text-slate-600 border border-slate-200/60">
+                            <i data-lucide="shield-alert" class="w-4 h-4 inline mr-1 text-slate-500"></i>
+                            Ensure high-traffic anti-slip certification rating for retail store safety compliance.
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3 no-print">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
+                            <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                <button onclick="switchView('item5', 'mockup', this)" class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Graphic Sample</button>
+                                <button onclick="switchView('item5', 'image', this)" class="item5-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                            </div>
+                        </div>
+
+                        <!-- View A: Graphic Mockup -->
+                        <div id="item5-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[220px]">
+                            <div class="w-44 h-44 rounded-full bg-slate-900 text-white border-4 border-white shadow-xl flex flex-col items-center justify-center text-center p-4 transform rotate-[-5deg]">
+                                <i data-lucide="navigation" class="w-8 h-8 mb-1 text-amber-400"></i>
+                                <span class="font-bebas text-xl tracking-wider">WAYFINDING</span>
+                                <span class="text-[10px] text-slate-300 uppercase">Floor Graphic</span>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono mt-4">Large-Scale Floor Decal Mockup</span>
+                        </div>
+
+                        <!-- View B: Reference Photo Container -->
+                        <div id="item5-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[220px]">
+                            <div class="relative w-full max-w-md group">
+                                <img id="item5-img-tag" src="images/floor-decal-ref.jpg" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/floor-decal-ref.jpg';" 
+                                     alt="Vendor Reference - Floor Decal" 
+                                     class="w-full h-auto max-h-56 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span class="font-mono text-emerald-400">Path: images/floor-decal-ref.jpg</span>
+                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                        Test Local Image
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item5-img-tag')">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Must use high-durability anti-slip commercial floor laminate.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Modal: GitHub Image Directory & Upload Instructions -->
+    <div id="image-guide-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden no-print">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 m-4 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <div class="flex items-center space-x-2 text-emerald-800">
+                    <i data-lucide="folder-git-2" class="w-5 h-5"></i>
+                    <h3 class="font-bold text-lg text-slate-900">GitHub Image Structure Guide</h3>
+                </div>
+                <button onclick="closeImageGuideModal()" class="text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+                To show your reference photos directly on GitHub Pages for Mukaram, organize your GitHub repository like this:
+            </p>
+
+            <div class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs leading-relaxed space-y-1">
+                <div class="text-emerald-400">📁 your-repository-name/</div>
+                <div class="pl-4 text-slate-300">├── 📄 index.html</div>
+                <div class="pl-4 text-emerald-400">└── 📁 images/</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ ceiling-suspended-ref.jpg</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ aisle-markers-ref.jpg</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ shelf-top-ref.jpg</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ zone-header-ref.jpg</div>
+                <div class="pl-8 text-slate-400">└── 🖼️ floor-decal-ref.jpg</div>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-xs text-emerald-950">
+                💡 <strong>Pro Tip:</strong> You can click <strong>"Test Local Image"</strong> on any item card right now to choose a photo from your computer and preview how it looks instantly inside the dashboard!
+            </div>
+
+            <div class="flex justify-end pt-2">
+                <button onclick="closeImageGuideModal()" class="px-4 py-2 bg-slate-900 text-white font-medium text-xs rounded-lg hover:bg-slate-800">
+                    Got it, Close Guide
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500 no-print">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© Indoor Signage Package Specification & Vendor Guidelines Sheet (Updated: Expanded PVC Specification)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+
+        // Toggle View between Mockup and Reference Photo
+        function switchView(itemId, viewType, btnElement) {
+            const mockupView = document.getElementById(`${itemId}-mockup-view`);
+            const imageView = document.getElementById(`${itemId}-image-view`);
+            const buttons = document.querySelectorAll(`.${itemId}-tab-btn`);
+
+            buttons.forEach(b => {
+                b.classList.remove('bg-white', 'shadow-sm', 'text-slate-900', 'font-semibold');
+                b.classList.add('text-slate-600');
+            });
+
+            if (btnElement) {
+                btnElement.classList.add('bg-white', 'shadow-sm', 'text-slate-900', 'font-semibold');
+                btnElement.classList.remove('text-slate-600');
+            }
+
+            if (viewType === 'image') {
+                mockupView.classList.add('hidden');
+                imageView.classList.remove('hidden');
+            } else {
+                imageView.classList.add('hidden');
+                mockupView.classList.remove('hidden');
+            }
+        }
+
+        // Preview Local Image Uploaded directly in Browser
+        function previewLocalImage(event, targetImgId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgTag = document.getElementById(targetImgId);
+                    if (imgTag) {
+                        imgTag.src = e.target.result;
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Modal Controls
+        function openImageGuideModal() {
+            document.getElementById('image-guide-modal').classList.remove('hidden');
+        }
+
+        function closeImageGuideModal() {
+            document.getElementById('image-guide-modal').classList.add('hidden');
+        }
+
+        // Filter Functionality
+        function filterSigns(category) {
+<!-- ... existing code -->
