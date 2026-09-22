@@ -707,10 +707,10 @@
                 <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center space-x-3">
                         <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">5</span>
-                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">36″ Circular Floor Decals (4 Custom Advertising Designs)</h2>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">36″ Circular Floor Decals (4 Target-Audience Designs)</h2>
                     </div>
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
-                        4 Unique Circular Designs
+                        4 Unique Circular Graphics
                     </span>
                 </div>
 
@@ -734,23 +734,28 @@
                                 </div>
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Lamination:</span>
-                                    <span class="font-medium text-slate-900">Anti-slip textured laminate</span>
+                                    <span class="font-medium text-slate-900">Anti-slip textured laminate (UL 410)</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Branding Requirements:</span>
+                                    <span class="font-medium text-slate-900">Jamali Garden URL + Custom QR Code</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-slate-500">Application:</span>
-                                    <span class="font-medium text-slate-900">High-traffic retail floor placement</span>
+                                    <span class="font-medium text-slate-900">Showroom floor high-traffic placement</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="p-3.5 bg-rose-50/70 rounded-xl text-xs text-rose-900 border border-rose-100 space-y-2">
-                            <div class="flex items-center space-x-1.5 font-bold">
-                                <i data-lucide="shield-alert" class="w-4 h-4 text-rose-600"></i>
-                                <span>Design & Safety Instructions:</span>
-                            </div>
-                            <p class="leading-relaxed">
-                                All 4 floor decal graphics must be formatted as 36-inch full circles with anti-slip commercial laminate (UL 410 rated). Each decal carries distinct advertising, brand, or promotional messaging.
-                            </p>
+                        <!-- Decal Category Breakdown -->
+                        <div class="p-3.5 bg-amber-50/70 rounded-xl text-xs text-amber-950 border border-amber-200 space-y-2">
+                            <strong class="font-bold block uppercase tracking-wide text-amber-900">4 Campaign Artwork Designs:</strong>
+                            <ol class="list-decimal pl-4 space-y-1 font-medium text-slate-800">
+                                <li><strong class="text-amber-900">Hotel & Venue Essentials</strong> <span class="text-slate-500">(Chandelier Icon • "Elegant Décor")</span></li>
+                                <li><strong class="text-amber-900">Set Designer's Pick</strong> <span class="text-slate-500">(Camera Icon • "Props That Inspire")</span></li>
+                                <li><strong class="text-amber-900">Event Planner Favorites</strong> <span class="text-slate-500">(Arch/Table Icon • "Style Meets Scale")</span></li>
+                                <li><strong class="text-amber-900">Florist Choice</strong> <span class="text-slate-500">(Floral Ornament • "Trusted by Designers")</span></li>
+                            </ol>
                         </div>
                     </div>
 
@@ -758,55 +763,77 @@
                         <div class="flex items-center justify-between mb-3 no-print">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
                             <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
-                                <button onclick="switchView('item5', 'mockup', this)" class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Design Previews (4)</button>
+                                <button onclick="switchView('item5', 'mockup', this)" class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Interactive Preview</button>
                                 <button onclick="switchView('item5', 'image', this)" class="item5-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
                             </div>
                         </div>
 
                         <!-- View A: Interactive Graphic Mockup -->
-                        <div id="item5-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[260px]">
-                            <!-- Interactive Circular Decal Card -->
-                            <div id="floor-decal-preview" class="w-48 h-48 sm:w-52 sm:h-52 rounded-full bg-slate-900 text-white border-4 border-white shadow-2xl flex flex-col items-center justify-center text-center p-4 transition-all duration-300 transform">
-                                <i id="floor-decal-icon" data-lucide="tag" class="w-8 h-8 mb-1 text-amber-400"></i>
-                                <span id="floor-decal-title" class="font-bebas text-2xl tracking-wider leading-none">SPECIAL PROMOTION</span>
-                                <span id="floor-decal-subtitle" class="text-[10px] text-slate-300 uppercase tracking-widest mt-1">Design 01 • 36" Circle</span>
+                        <div id="item5-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[300px]">
+                            <div id="floor-decal-container" class="w-60 h-60 rounded-full border-[8px] border-[#f26522] bg-[#fbf8f3] shadow-2xl flex flex-col justify-between items-center text-center p-3 relative overflow-hidden transition-all duration-300 transform">
+                                
+                                <!-- Inner Orange Ring Accent -->
+                                <div class="absolute inset-1 border-2 border-[#f26522] rounded-full pointer-events-none"></div>
+
+                                <!-- Top Icon & Header Section -->
+                                <div class="mt-3 flex flex-col items-center z-10">
+                                    <div id="floor-decal-icon-wrap" class="mb-1 text-slate-800">
+                                        <i id="floor-decal-icon" data-lucide="sparkles" class="w-6 h-6"></i>
+                                    </div>
+                                    <h4 id="floor-decal-title" class="font-serif italic font-bold text-xl sm:text-2xl text-[#f26522] leading-tight px-2">Hotel & Venue</h4>
+                                    <p id="floor-decal-subtitle-main" class="font-serif italic text-lg text-slate-700 leading-tight">Essentials</p>
+                                </div>
+
+                                <!-- Middle Tagline -->
+                                <div class="z-10 my-1 border-t border-b border-slate-300 py-0.5 px-4">
+                                    <span id="floor-decal-tagline" class="text-[9px] font-sans font-medium text-slate-600 tracking-wider uppercase block">Elegant Décor • Bulk Pricing Available</span>
+                                </div>
+
+                                <!-- Bottom Banner Section -->
+                                <div id="floor-decal-bottom-banner" class="w-[110%] bg-[#5c3a21] text-white py-1.5 px-3 -mb-3 z-10 text-center flex flex-col items-center justify-center">
+                                    <span class="text-[8px] font-mono tracking-widest font-bold block">WWW.JAMALIGARDEN.COM</span>
+                                    <div class="flex items-center gap-1 mt-0.5 opacity-90">
+                                        <i data-lucide="qr-code" class="w-3 h-3 text-amber-300"></i>
+                                        <span id="floor-decal-qr-text" class="text-[7px] font-sans font-semibold uppercase tracking-tight text-amber-200">Scan to shop collection</span>
+                                    </div>
+                                </div>
                             </div>
                             
                             <!-- 4 Design Selector Buttons -->
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-5 w-full max-w-lg no-print" id="decal-design-selector">
-                                <button onclick="updateFloorDecalPreview(this, 'SPECIAL PROMOTION', 'Design 01 • 36&quot; Circle', 'tag')" class="decal-btn px-3 py-2 rounded-lg border-2 border-slate-900 bg-slate-900 text-white text-xs font-semibold text-center transition-all">
-                                    01. Promo
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-5 w-full max-w-xl no-print" id="decal-design-selector">
+                                <button onclick="selectDecalDesign('hotel', this)" class="decal-btn px-2.5 py-2 rounded-lg border-2 border-slate-900 bg-slate-900 text-white text-xs font-semibold text-center transition-all">
+                                    01. Hotel & Venue
                                 </button>
-                                <button onclick="updateFloorDecalPreview(this, 'NEW ARRIVALS', 'Design 02 • 36&quot; Circle', 'sparkles')" class="decal-btn px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
-                                    02. New Items
+                                <button onclick="selectDecalDesign('set', this)" class="decal-btn px-2.5 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    02. Set Designer
                                 </button>
-                                <button onclick="updateFloorDecalPreview(this, 'SEASONAL COLLECTION', 'Design 03 • 36&quot; Circle', 'gift')" class="decal-btn px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
-                                    03. Collection
+                                <button onclick="selectDecalDesign('event', this)" class="decal-btn px-2.5 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    03. Event Planner
                                 </button>
-                                <button onclick="updateFloorDecalPreview(this, 'WELCOME TO JAMALI', 'Design 04 • 36&quot; Circle', 'compass')" class="decal-btn px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
-                                    04. Brand / Welcome
+                                <button onclick="selectDecalDesign('florist', this)" class="decal-btn px-2.5 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    04. Florist Choice
                                 </button>
                             </div>
-                            <span class="text-xs text-slate-400 font-mono mt-3">36″ Diameter Circular Floor Vinyl Mockup</span>
+                            <span class="text-xs text-slate-400 font-mono mt-3">36″ Diameter Circular Floor Decal (Heavy-Duty Anti-Slip Vinyl)</span>
                         </div>
 
                         <!-- View B: Reference Photo Container -->
-                        <div id="item5-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[260px]">
+                        <div id="item5-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[300px]">
                             <div class="relative w-full max-w-md group">
-                                <img id="item5-img-tag" src="images/floor-decal-ref.jpg" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/floor-decal-ref.jpg';" 
-                                     alt="Vendor Reference - Floor Decal" 
-                                     class="w-full h-auto max-h-56 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <img id="item5-img-tag" src="images/36inFloorDecal4types.png" 
+                                     onerror="this.onerror=null; this.src='images/floor-decal-ref.jpg'; this.onerror=function(){this.src='https://placehold.co/600x500/1e201d/ffffff?text=Upload+images/36inFloorDecal4types.png';}" 
+                                     alt="Vendor Reference - 4 Circular Floor Decals" 
+                                     class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                                    <span class="font-mono text-emerald-400">Path: images/floor-decal-ref.jpg</span>
+                                    <span class="font-mono text-emerald-400">Path: images/36inFloorDecal4types.png</span>
                                     <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
                                         Test Local Image
                                         <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item5-img-tag')">
                                     </label>
                                 </div>
                             </div>
-                            <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
-                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Must produce 4 unique 36" circular vector art files with heavy-duty anti-slip commercial floor laminate.</span>
+                            <div class="mt-3 p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: All 4 designs are 36″ circles with orange borders, custom QR codes, and textured anti-slip laminate.</span>
                             </div>
                         </div>
 
@@ -943,6 +970,81 @@
                     item.style.display = 'none';
                 }
             });
+        }
+
+        // Interactive Floor Decal Design Selector matching Jamali Artwork
+        const decalData = {
+            hotel: {
+                title: "Hotel & Venue",
+                subtitle: "Essentials",
+                tagline: "ELEGANT DÉCOR • BULK PRICING AVAILABLE",
+                bg: "#fbf8f3",
+                bottomBg: "#5c3a21",
+                bottomText: "SCAN TO SHOP HOTEL & VENUE COLLECTION",
+                icon: "sparkles"
+            },
+            set: {
+                title: "Set Designer's",
+                subtitle: "Pick",
+                tagline: "PROPS THAT INSPIRE",
+                bg: "#f8f6f0",
+                bottomBg: "#5c3a21",
+                bottomText: "SCAN TO SHOP SET DESIGNER'S PICK",
+                icon: "clapperboard"
+            },
+            event: {
+                title: "Event Planner",
+                subtitle: "Favorites",
+                tagline: "STYLE MEETS SCALE • BULK PRICING AVAILABLE",
+                bg: "#fbf0eb",
+                bottomBg: "#5c3a21",
+                bottomText: "SCAN TO SHOP EVENT PLANNER COLLECTION",
+                icon: "party-popper"
+            },
+            florist: {
+                title: "Florist",
+                subtitle: "Choice",
+                tagline: "TRUSTED BY DESIGNERS",
+                bg: "#e7efe0",
+                bottomBg: "#5c7929",
+                bottomText: "SCAN TO SHOP FLORIST CHOICE COLLECTION",
+                icon: "flower-2"
+            }
+        };
+
+        function selectDecalDesign(key, btnElement) {
+            const data = decalData[key];
+            if (!data) return;
+
+            const container = document.getElementById('floor-decal-container');
+            const title = document.getElementById('floor-decal-title');
+            const subtitle = document.getElementById('floor-decal-subtitle-main');
+            const tagline = document.getElementById('floor-decal-tagline');
+            const bottomBanner = document.getElementById('floor-decal-bottom-banner');
+            const qrText = document.getElementById('floor-decal-qr-text');
+            const icon = document.getElementById('floor-decal-icon');
+
+            if (container) container.style.backgroundColor = data.bg;
+            if (title) title.textContent = data.title;
+            if (subtitle) subtitle.textContent = data.subtitle;
+            if (tagline) tagline.textContent = data.tagline;
+            if (bottomBanner) bottomBanner.style.backgroundColor = data.bottomBg;
+            if (qrText) qrText.textContent = data.bottomText;
+            if (icon) {
+                icon.setAttribute('data-lucide', data.icon);
+                if (window.lucide) lucide.createIcons();
+            }
+
+            const buttons = document.querySelectorAll('#decal-design-selector .decal-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white', 'border-2', 'border-slate-900');
+                btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-50', 'border', 'border-slate-200');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-50', 'border-slate-200');
+                btnElement.classList.add('bg-slate-900', 'text-white', 'border-2', 'border-slate-900');
+            }
         }
 
         // Interactive Aisle Number Selector
