@@ -891,5 +891,67 @@
         }
 
         // Filter Functionality
-        function filterSigns(category) {
-<!-- ... existing code -->
+        function filterSigns(category, btnElement) {
+            const items = document.querySelectorAll('.sign-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-100', 'border', 'border-slate-200');
+            });
+
+            const activeBtn = btnElement || (window.event ? window.event.target.closest('.filter-btn') : null);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-100', 'border-slate-200');
+                activeBtn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+            }
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Interactive Aisle Number Selector
+        function updateAislePreview(btnElement, number) {
+            const previewNum = document.getElementById('aisle-preview-number');
+            if (previewNum) {
+                previewNum.textContent = number;
+            }
+
+            const buttons = document.querySelectorAll('#aisle-num-selector .aisle-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white', 'border-2', 'border-slate-900');
+                btn.classList.add('bg-white', 'text-slate-800', 'hover:bg-slate-50', 'border', 'border-slate-300');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('bg-white', 'text-slate-800', 'hover:bg-slate-50', 'border-slate-300');
+                btnElement.classList.add('bg-slate-900', 'text-white', 'border-2', 'border-slate-900');
+            }
+        }
+
+        // Interactive Shelf Category Selector
+        function updateCategoryPreview(btnElement, text) {
+            const previewText = document.getElementById('category-preview-text');
+            if (previewText) {
+                previewText.textContent = text.toUpperCase();
+            }
+
+            const buttons = document.querySelectorAll('#category-list .category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-2', 'border-slate-900');
+                btn.classList.add('border', 'border-slate-200');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('border', 'border-slate-200');
+                btnElement.classList.add('border-2', 'border-slate-900');
+            }
+        }
+    </script>
+</body>
+</html>
