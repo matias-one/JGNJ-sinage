@@ -707,10 +707,10 @@
                 <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center space-x-3">
                         <span class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-sm">5</span>
-                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Floor Decals (Designed Piece)</h2>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">36″ Circular Floor Decals (4 Custom Advertising Designs)</h2>
                     </div>
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
-                        High-Durability Floor Graphics
+                        4 Unique Circular Designs
                     </span>
                 </div>
 
@@ -721,23 +721,36 @@
                             
                             <div class="space-y-2 text-sm">
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Shape & Size:</span>
+                                    <span class="font-bold text-slate-900">36in Diameter (Circle)</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Total Designs:</span>
+                                    <span class="font-bold text-indigo-700">4 Distinct Circular Graphics</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Media Type:</span>
-                                    <span class="font-semibold text-slate-900">Heavy-duty slip-resistant floor vinyl</span>
+                                    <span class="font-semibold text-slate-900">Heavy-duty commercial floor vinyl</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Lamination:</span>
-                                    <span class="font-medium text-slate-900">Anti-slip commercial textured laminate</span>
+                                    <span class="font-medium text-slate-900">Anti-slip textured laminate</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span class="text-slate-500">Vendor Instructions:</span>
-                                    <span class="font-medium text-slate-900">Recreate reference cleanly for large format</span>
+                                    <span class="text-slate-500">Application:</span>
+                                    <span class="font-medium text-slate-900">High-traffic retail floor placement</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="p-3.5 bg-slate-100 rounded-xl text-xs text-slate-600 border border-slate-200/60">
-                            <i data-lucide="shield-alert" class="w-4 h-4 inline mr-1 text-slate-500"></i>
-                            Ensure high-traffic anti-slip certification rating for retail store safety compliance.
+                        <div class="p-3.5 bg-rose-50/70 rounded-xl text-xs text-rose-900 border border-rose-100 space-y-2">
+                            <div class="flex items-center space-x-1.5 font-bold">
+                                <i data-lucide="shield-alert" class="w-4 h-4 text-rose-600"></i>
+                                <span>Design & Safety Instructions:</span>
+                            </div>
+                            <p class="leading-relaxed">
+                                All 4 floor decal graphics must be formatted as 36-inch full circles with anti-slip commercial laminate (UL 410 rated). Each decal carries distinct advertising, brand, or promotional messaging.
+                            </p>
                         </div>
                     </div>
 
@@ -745,23 +758,40 @@
                         <div class="flex items-center justify-between mb-3 no-print">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
                             <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
-                                <button onclick="switchView('item5', 'mockup', this)" class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Graphic Sample</button>
+                                <button onclick="switchView('item5', 'mockup', this)" class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Design Previews (4)</button>
                                 <button onclick="switchView('item5', 'image', this)" class="item5-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
                             </div>
                         </div>
 
-                        <!-- View A: Graphic Mockup -->
-                        <div id="item5-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[220px]">
-                            <div class="w-44 h-44 rounded-full bg-slate-900 text-white border-4 border-white shadow-xl flex flex-col items-center justify-center text-center p-4 transform rotate-[-5deg]">
-                                <i data-lucide="navigation" class="w-8 h-8 mb-1 text-amber-400"></i>
-                                <span class="font-bebas text-xl tracking-wider">WAYFINDING</span>
-                                <span class="text-[10px] text-slate-300 uppercase">Floor Graphic</span>
+                        <!-- View A: Interactive Graphic Mockup -->
+                        <div id="item5-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[260px]">
+                            <!-- Interactive Circular Decal Card -->
+                            <div id="floor-decal-preview" class="w-48 h-48 sm:w-52 sm:h-52 rounded-full bg-slate-900 text-white border-4 border-white shadow-2xl flex flex-col items-center justify-center text-center p-4 transition-all duration-300 transform">
+                                <i id="floor-decal-icon" data-lucide="tag" class="w-8 h-8 mb-1 text-amber-400"></i>
+                                <span id="floor-decal-title" class="font-bebas text-2xl tracking-wider leading-none">SPECIAL PROMOTION</span>
+                                <span id="floor-decal-subtitle" class="text-[10px] text-slate-300 uppercase tracking-widest mt-1">Design 01 • 36" Circle</span>
                             </div>
-                            <span class="text-xs text-slate-400 font-mono mt-4">Large-Scale Floor Decal Mockup</span>
+                            
+                            <!-- 4 Design Selector Buttons -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-5 w-full max-w-lg no-print" id="decal-design-selector">
+                                <button onclick="updateFloorDecalPreview(this, 'SPECIAL PROMOTION', 'Design 01 • 36&quot; Circle', 'tag')" class="decal-btn px-3 py-2 rounded-lg border-2 border-slate-900 bg-slate-900 text-white text-xs font-semibold text-center transition-all">
+                                    01. Promo
+                                </button>
+                                <button onclick="updateFloorDecalPreview(this, 'NEW ARRIVALS', 'Design 02 • 36&quot; Circle', 'sparkles')" class="decal-btn px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    02. New Items
+                                </button>
+                                <button onclick="updateFloorDecalPreview(this, 'SEASONAL COLLECTION', 'Design 03 • 36&quot; Circle', 'gift')" class="decal-btn px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    03. Collection
+                                </button>
+                                <button onclick="updateFloorDecalPreview(this, 'WELCOME TO JAMALI', 'Design 04 • 36&quot; Circle', 'compass')" class="decal-btn px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    04. Brand / Welcome
+                                </button>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono mt-3">36″ Diameter Circular Floor Vinyl Mockup</span>
                         </div>
 
                         <!-- View B: Reference Photo Container -->
-                        <div id="item5-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[220px]">
+                        <div id="item5-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[260px]">
                             <div class="relative w-full max-w-md group">
                                 <img id="item5-img-tag" src="images/floor-decal-ref.jpg" 
                                      onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/floor-decal-ref.jpg';" 
@@ -776,7 +806,7 @@
                                 </div>
                             </div>
                             <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
-                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Must use high-durability anti-slip commercial floor laminate.</span>
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Must produce 4 unique 36" circular vector art files with heavy-duty anti-slip commercial floor laminate.</span>
                             </div>
                         </div>
 
@@ -950,6 +980,33 @@
             if (btnElement) {
                 btnElement.classList.remove('border', 'border-slate-200');
                 btnElement.classList.add('border-2', 'border-slate-900');
+            }
+        }
+
+        // Interactive Floor Decal Design Selector
+        function updateFloorDecalPreview(btnElement, titleText, subtitleText, iconName) {
+            const decalTitle = document.getElementById('floor-decal-title');
+            const decalSubtitle = document.getElementById('floor-decal-subtitle');
+            const decalIcon = document.getElementById('floor-decal-icon');
+
+            if (decalTitle) decalTitle.textContent = titleText;
+            if (decalSubtitle) decalSubtitle.textContent = subtitleText;
+            if (decalIcon) {
+                decalIcon.setAttribute('data-lucide', iconName);
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+            }
+
+            const buttons = document.querySelectorAll('#decal-design-selector .decal-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'text-white', 'border-2', 'border-slate-900');
+                btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-50', 'border', 'border-slate-200');
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-50', 'border-slate-200');
+                btnElement.classList.add('bg-slate-900', 'text-white', 'border-2', 'border-slate-900');
             }
         }
     </script>
