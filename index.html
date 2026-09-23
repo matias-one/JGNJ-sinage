@@ -1404,79 +1404,80 @@
         }
 
         // Interactive Floor Decal Design Selector matching Jamali Artwork
-        const decalData = {
-            hotel: {
-                title: "Hotel & Venue",
-                subtitle: "Essentials",
-                tagline: "ELEGANT DÉCOR • BULK PRICING AVAILABLE",
-                bg: "#fbf8f3",
-                bottomBg: "#5c3d2e",
-                bottomText: "SCAN TO SHOP HOTEL & VENUE COLLECTION",
-                icon: "sparkles"
-            },
-            florist: {
-                title: "Florist Choice",
-                subtitle: "Collection",
-                tagline: "TRUSTED BY DESIGNERS • BULK FLORAL SUPPLIES",
-                bg: "#f4f7f0",
-                bottomBg: "#5e8329",
-                bottomText: "SCAN TO SHOP FLORIST CHOICE COLLECTION",
-                icon: "flower-2"
-            },
-            event: {
-                title: "Event Planner",
-                subtitle: "Favorites",
-                tagline: "STYLE MEETS SCALE • LIGHTING & DÉCOR",
-                bg: "#fbf0eb",
-                bottomBg: "#5c3d2e",
-                bottomText: "SCAN TO SHOP EVENT PLANNER COLLECTION",
-                icon: "party-popper"
-            },
-            set: {
-                title: "Set Designer's",
-                subtitle: "Pick",
-                tagline: "PROPS THAT INSPIRE • SILK PLANTS & TREES",
-                bg: "#f8f6f0",
-                bottomBg: "#5c3d2e",
-                bottomText: "SCAN TO SHOP SET DESIGNER'S PICK",
-                icon: "clapperboard"
-            }
-        };
 
-        function selectDecalDesign(key, btnElement) {
-            const data = decalData[key];
-            if (!data) return;
+// Interactive Floor Decal Artwork Selector
+const decalArtworkData = {
+    hotel: {
+        image: "images/Hotel-and-Venue-essentials.png",
+        alt: "Hotel and Venue Essentials circular floor decal artwork"
+    },
 
-            const container = document.getElementById('floor-decal-container');
-            const title = document.getElementById('floor-decal-title');
-            const subtitle = document.getElementById('floor-decal-subtitle-main');
-            const tagline = document.getElementById('floor-decal-tagline');
-            const bottomBanner = document.getElementById('floor-decal-bottom-banner');
-            const qrText = document.getElementById('floor-decal-qr-text');
-            const icon = document.getElementById('floor-decal-icon');
+    florist: {
+        image: "images/Florist-Choice.png",
+        alt: "Florist Choice circular floor decal artwork"
+    },
 
-            if (container) container.style.backgroundColor = data.bg;
-            if (title) title.textContent = data.title;
-            if (subtitle) subtitle.textContent = data.subtitle;
-            if (tagline) tagline.textContent = data.tagline;
-            if (bottomBanner) bottomBanner.style.backgroundColor = data.bottomBg;
-            if (qrText) qrText.textContent = data.bottomText;
-            if (icon) {
-                icon.setAttribute('data-lucide', data.icon);
-                if (window.lucide) lucide.createIcons();
-            }
+    event: {
+        image: "images/Event-Planer-Favorites.png",
+        alt: "Event Planner Favorites circular floor decal artwork"
+    },
 
-            const buttons = document.querySelectorAll('#decal-design-selector .decal-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-[#1e201d]', 'text-white', 'border-2', 'border-[#1e201d]');
-                btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-50', 'border', 'border-slate-200');
-            });
+    set: {
+        image: "images/Set-Designers-Pick.png",
+        alt: "Set Designer's Pick circular floor decal artwork"
+    }
+};
 
-            if (btnElement) {
-                btnElement.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-50', 'border-slate-200');
-                btnElement.classList.add('bg-[#1e201d]', 'text-white', 'border-2', 'border-[#1e201d]');
-            }
-        }
+function selectDecalDesign(key, btnElement) {
+    const data = decalArtworkData[key];
+
+    if (!data) return;
+
+    // Find the artwork image
+    const artwork = document.getElementById('floor-decal-artwork');
+
+    // Change the image
+    if (artwork) {
+        artwork.src = data.image;
+        artwork.alt = data.alt;
+    }
+
+    // Update selected button
+    const buttons = document.querySelectorAll('#decal-design-selector .decal-btn');
+
+    buttons.forEach(btn => {
+        btn.classList.remove(
+            'bg-[#1e201d]',
+            'text-white',
+            'border-2',
+            'border-[#1e201d]'
+        );
+
+        btn.classList.add(
+            'bg-white',
+            'text-slate-700',
+            'border',
+            'border-slate-200'
+        );
+    });
+
+    if (btnElement) {
+        btnElement.classList.remove(
+            'bg-white',
+            'text-slate-700',
+            'border',
+            'border-slate-200'
+        );
+
+        btnElement.classList.add(
+            'bg-[#1e201d]',
+            'text-white',
+            'border-2',
+            'border-[#1e201d]'
+        );
+    }
+}
+
 
         // Interactive Aisle System Slat Selector
         function updateAisleSystem(num, slat1, slat2, btnElement) {
