@@ -430,23 +430,73 @@
                             </div>
 
                             <!-- Main Aisle Header Card -->
-                            <div class="w-60 bg-[#1e201d] border-2 border-[#d4af37] text-white p-4 rounded-lg shadow-xl text-center relative">
-                                <div class="absolute top-2 left-2.5 w-2.5 h-2.5 rounded-full bg-amber-200 border border-slate-700"></div>
-                                <div class="absolute top-2 right-2.5 w-2.5 h-2.5 rounded-full bg-amber-200 border border-slate-700"></div>
-                                <div class="absolute bottom-2 left-2.5 w-2.5 h-2.5 rounded-full bg-amber-200 border border-slate-700"></div>
-                                <div class="absolute bottom-2 right-2.5 w-2.5 h-2.5 rounded-full bg-amber-200 border border-slate-700"></div>
+<!-- Main Aisle Header Card — matches printed board -->
+<div class="w-64 aspect-[24/20] bg-[#1e201d] rounded-sm shadow-xl relative overflow-hidden">
 
-                                <span class="sackers-gothic text-[10px] text-amber-200 tracking-wider block mb-1">
-                                    <strong class="text-xs">J</strong>AMALI<strong class="text-xs">G</strong>ARDEN
-                                </span>
+    <!-- Botanical frond watermark -->
+    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 167"
+         preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+            <g id="aisle-frond">
+                <path d="M0,58 Q-9,28 0,-14" stroke="#000" stroke-width="2.5" fill="none"/>
+                <ellipse cx="-14" cy="42" rx="14" ry="5"   transform="rotate(-30 -14 42)"/>
+                <ellipse cx="14"  cy="38" rx="14" ry="5"   transform="rotate(30 14 38)"/>
+                <ellipse cx="-16" cy="26" rx="15" ry="5"   transform="rotate(-35 -16 26)"/>
+                <ellipse cx="16"  cy="22" rx="15" ry="5"   transform="rotate(35 16 22)"/>
+                <ellipse cx="-15" cy="9"  rx="14" ry="5"   transform="rotate(-40 -15 9)"/>
+                <ellipse cx="15"  cy="5"  rx="14" ry="5"   transform="rotate(40 15 5)"/>
+                <ellipse cx="-11" cy="-7" rx="12" ry="4.5" transform="rotate(-45 -11 -7)"/>
+                <ellipse cx="11"  cy="-11" rx="12" ry="4.5" transform="rotate(45 11 -11)"/>
+                <ellipse cx="-6"  cy="-21" rx="9"  ry="4"   transform="rotate(-50 -6 -21)"/>
+                <ellipse cx="6"   cy="-25" rx="9"  ry="4"   transform="rotate(50 6 -25)"/>
+            </g>
+        </defs>
+        <g fill="#000000" opacity="0.22">
+            <use href="#aisle-frond" transform="translate(52,92)"/>
+            <use href="#aisle-frond" transform="translate(148,92) scale(-1,1)"/>
+        </g>
+    </svg>
 
-                                <div class="flex items-center justify-center my-1">
-                                    <div class="w-12 h-12 rounded-full bg-[#eb642a] flex items-center justify-center border-2 border-white shadow-md">
-                                        <span id="aisle-num-display" class="font-bebas text-3xl font-bold leading-none text-white">1</span>
-                                    </div>
-                                </div>
-                                <span class="text-[9px] text-slate-300 font-bebas tracking-widest block uppercase">AISLE HEADER (24″ × 20″)</span>
-                            </div>
+    <!-- Wooden mounting posts (sit behind the badge) -->
+    <div class="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 flex gap-[42px]">
+        <div class="w-2.5 h-[104px] bg-[#c9a86a] rounded-sm"></div>
+        <div class="w-2.5 h-[104px] bg-[#c9a86a] rounded-sm"></div>
+    </div>
+
+    <!-- Brand wordmark -->
+    <div class="absolute top-[17%] left-0 right-0 text-center z-10">
+        <span class="sackers-gothic text-[10px] text-[#eb642a] tracking-[0.18em] leading-none">
+            <strong class="text-[12px]">J</strong>AMALI<strong class="text-[12px]">G</strong>ARDEN
+        </span>
+    </div>
+
+    <!-- Aisle badge -->
+    <div class="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 z-20">
+        <div class="w-[82px] h-[82px] rounded-full bg-[#eb642a] ring-[3px] ring-[#d4af37]
+                    flex flex-col items-center justify-center shadow-lg">
+            <span class="text-[8px] font-bold text-white tracking-[0.22em] leading-none">AISLE</span>
+            <span id="aisle-num-display" class="font-bebas text-[38px] leading-[0.9] text-white">1</span>
+        </div>
+    </div>
+
+    <!-- Gold inner frame -->
+    <div class="absolute inset-[11px] border-2 border-[#d4af37] rounded-[2px] pointer-events-none"></div>
+
+    <!-- Corner grommets -->
+    <div class="absolute top-[7px] left-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
+        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
+    </div>
+    <div class="absolute top-[7px] right-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
+        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
+    </div>
+    <div class="absolute bottom-[7px] left-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
+        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
+    </div>
+    <div class="absolute bottom-[7px] right-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
+        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
+    </div>
+
+</div>
 
                             <!-- S-Hooks Connecting Links -->
                             <div class="w-44 flex justify-between px-3 my-0.5 z-10">
