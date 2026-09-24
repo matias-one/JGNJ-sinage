@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamali Garden — Signage Package Specifications</title>
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter, Bebas Neue & Playfair Display -->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -46,30 +46,23 @@
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 0.05em;
         }
-        
+
         .sackers-gothic {
             font-family: 'Inter', sans-serif;
             font-weight: 800;
             letter-spacing: 0.15em;
             text-transform: uppercase;
         }
-        
-        /* Grid pattern background for preview canvas */
+
         .bg-grid-pattern {
             background-size: 20px 20px;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
         }
 
-        /* Print optimization */
         @media print {
-            .no-print {
-                display: none !important;
-            }
-            body {
-                background: #ffffff !important;
-                color: #000000 !important;
-            }
+            .no-print { display: none !important; }
+            body { background: #ffffff !important; color: #000000 !important; }
             .print-full-width {
                 width: 100% !important;
                 max-width: 100% !important;
@@ -77,9 +70,7 @@
                 padding: 0 !important;
                 box-shadow: none !important;
             }
-            .page-break-inside-avoid {
-                break-inside: avoid;
-            }
+            .page-break-inside-avoid { break-inside: avoid; }
         }
     </style>
 </head>
@@ -117,7 +108,7 @@
     </header>
 
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        
+
         <!-- Global Brand Rules Banner -->
         <div class="bg-[#1e201d] text-white rounded-2xl p-5 sm:p-6 mb-6 shadow-md border-l-8 border-[#eb642a]">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
@@ -145,7 +136,6 @@
                     </ul>
                 </div>
 
-                <!-- Brand Palette Colors -->
                 <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 shrink-0">
                     <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Official Brand Palette</span>
                     <div class="grid grid-cols-2 gap-2 text-xs font-mono">
@@ -196,8 +186,8 @@
                 </div>
                 <div class="pt-2 md:pt-0 md:pl-4">
                     <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Package Items</span>
-                    <p class="text-lg font-bold text-slate-900 mt-1 font-bebas tracking-wide">5 Master Categories</p>
-                    <span class="text-[11px] text-slate-500">25 total signage pieces</span>
+                    <p class="text-lg font-bold text-slate-900 mt-1 font-bebas tracking-wide">6 Master Categories</p>
+                    <span class="text-[11px] text-slate-500">26+ total signage pieces</span>
                 </div>
                 <div class="pt-2 md:pt-0 md:pl-4">
                     <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Hardware Standards</span>
@@ -211,7 +201,7 @@
             <div class="flex flex-wrap items-center gap-2">
                 <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Filter Package View:</span>
                 <button onclick="filterSigns('all', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#1e201d] text-white transition-all shadow-sm border border-[#1e201d]">
-                    All Items (5)
+                    All Items (6)
                 </button>
                 <button onclick="filterSigns('ceiling', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">
                     Ceiling Suspended
@@ -233,6 +223,9 @@
         <!-- Signage Items Container -->
         <div class="space-y-8" id="signage-list">
 
+            <!-- ============================================================ -->
+            <!-- ITEM 1: OVERPASS DIRECTIONAL SIGN                              -->
+            <!-- ============================================================ -->
             <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="ceiling">
                 <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center space-x-3">
@@ -251,7 +244,7 @@
                     <div class="lg:col-span-5 space-y-4">
                         <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Production Specifications</h3>
-                            
+
                             <div class="space-y-2 text-sm">
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Dimensions:</span>
@@ -298,10 +291,8 @@
                             </div>
                         </div>
 
-                        <!-- View A: Generated CSS Mockup -->
                         <div id="item1-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[260px]">
-                            
-                            <!-- Toggle Side A vs Side B -->
+
                             <div class="flex space-x-2 mb-4 no-print">
                                 <button onclick="toggleOverpassSide('A')" id="btn-overpass-sideA" class="px-3 py-1 bg-[#1e201d] text-white text-xs font-bold rounded shadow-sm">Side A: SHOWROOM</button>
                                 <button onclick="toggleOverpassSide('B')" id="btn-overpass-sideB" class="px-3 py-1 bg-white border border-slate-300 text-slate-700 text-xs font-bold rounded hover:bg-slate-50">Side B: STORE & CHECKOUT</button>
@@ -324,7 +315,7 @@
                                     <span class="sackers-gothic text-[11px] text-[#eb642a] tracking-widest block mb-1">
                                         <strong class="text-sm">J</strong>AMALI<strong class="text-sm">G</strong>ARDEN
                                     </span>
-                                    
+
                                     <div id="overpass-sign-text-container" class="flex items-center justify-center space-x-3 my-2 border-y border-slate-700/60 py-2">
                                         <span id="overpass-sign-text" class="font-bebas text-3xl sm:text-4xl tracking-widest leading-none text-white">SHOWROOM</span>
                                         <i data-lucide="arrow-right" id="overpass-sign-arrow" class="w-6 h-6 text-[#eb642a]"></i>
@@ -335,12 +326,11 @@
                             </div>
                         </div>
 
-                        <!-- View B: Reference Photo Container -->
                         <div id="item1-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[260px]">
                             <div class="relative w-full max-w-md group">
-                                <img id="item1-img-tag" src="images/ceiling-suspended-ref.jpg" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/ceiling-suspended-ref.jpg';" 
-                                     alt="Vendor Reference - Ceiling Suspended Sign" 
+                                <img id="item1-img-tag" src="images/ceiling-suspended-ref.jpg"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x350/1e201d/ffffff?text=Upload+Reference+Image+to+images/ceiling-suspended-ref.jpg';"
+                                     alt="Vendor Reference - Ceiling Suspended Sign"
                                      class="w-full h-auto max-h-56 object-contain rounded-lg border border-slate-700 shadow-md">
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
                                     <span class="font-mono text-emerald-400">Path: images/ceiling-suspended-ref.jpg</span>
@@ -359,192 +349,122 @@
                 </div>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- ITEM 2: AISLE HEADER BOARDS (image-based)                     -->
+            <!-- ============================================================ -->
             <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="aisle">
                 <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center space-x-3">
                         <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">2</span>
                         <div>
-                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 2: Linked Modular Aisle Header & Category System</h2>
-                            <p class="text-xs text-slate-500">Ceiling Suspended Aisle Markers + Modular Interlocking Slats</p>
+                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 2: Aisle Header Boards</h2>
+                            <p class="text-xs text-slate-500">Ceiling Suspended Main Aisle Number Boards (Aisles 1–10)</p>
                         </div>
                     </div>
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-[#eb642a] text-white shadow-sm">
-                        10 Modular Systems Total (Aisles 1–10)
+                        10 Header Boards Total (Aisles 1–10)
                     </span>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+
                     <div class="lg:col-span-5 space-y-4">
                         <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
-                            
                             <div class="space-y-2 text-sm">
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                                    <span class="text-slate-500">Main Header Board:</span>
-                                    <span class="font-bold text-slate-900">24″ W × 20″ H (6mm PVC Board)</span>
+                                    <span class="text-slate-500">Dimensions:</span>
+                                    <span class="font-bold text-slate-900">24″ W × 20″ H</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                                    <span class="text-slate-500">Category Slats:</span>
-                                    <span class="font-bold text-slate-900">20″ W × 5″–6″ H (3mm PVC Slats)</span>
+                                    <span class="text-slate-500">Material Spec:</span>
+                                    <span class="font-semibold text-emerald-700">6mm Expanded PVC Board</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                                    <span class="text-slate-500">Total Systems:</span>
-                                    <span class="font-semibold text-slate-900">10 Main Headers (Single Digits 1–10)</span>
+                                    <span class="text-slate-500">Printing:</span>
+                                    <span class="font-medium text-slate-900">Direct UV Print (Double-Sided)</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Color System:</span>
-                                    <span class="font-medium text-slate-900">Dark Green (<code class="text-xs font-mono">#1E201D</code>) + Gold Border</span>
+                                    <span class="font-medium text-slate-900">Dark Green <code class="text-xs font-mono">#1E201D</code> + Gold Frame</span>
                                 </div>
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Aisle Badge:</span>
-                                    <span class="font-bold text-[#eb642a]">Brand Orange Circle Badge (<code class="text-xs font-mono">#EB642A</code>)</span>
+                                    <span class="font-bold text-[#eb642a]">Orange Circle <code class="text-xs font-mono">#EB642A</code></span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span class="text-slate-500">Modular Hardware:</span>
-                                    <span class="font-medium text-slate-900 text-right">4 Grommets per board + Metal S-Hooks / Split Rings</span>
+                                    <span class="text-slate-500">Hardware:</span>
+                                    <span class="font-medium text-slate-900 text-right">4 Corner Grommets (⅜″ dia) + Ceiling Chain Kit</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="p-3 bg-purple-50 rounded-xl text-xs text-purple-900 border border-purple-200">
-                            <strong>Hardware Detail:</strong> Header board has 2 top grommets for ceiling wires and 2 bottom grommets for slat links. Slats feature 4 grommets (2 top, 2 bottom) allowing unlimited modular chaining.
+                            <strong>Production Note:</strong> Only the aisle number differs between boards — the base artwork is identical. Print 10 boards (Aisles 1–10) from one master template.
                         </div>
                     </div>
 
                     <div class="lg:col-span-7 flex flex-col justify-between">
                         <div class="flex items-center justify-between mb-3 no-print">
-                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Interactive Modular Slat Blueprint</h3>
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Live Aisle Preview</h3>
                             <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
-                                <button onclick="switchView('item2', 'mockup', this)" class="item2-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Interactive Modular Blueprint</button>
+                                <button onclick="switchView('item2', 'mockup', this)" class="item2-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Artwork Preview</button>
                                 <button onclick="switchView('item2', 'image', this)" class="item2-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
                             </div>
                         </div>
 
-                        <!-- View A: Interactive Modular Blueprint -->
-                        <div id="item2-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[320px]">
-                            
-                            <!-- Ceiling Wires -->
-                            <div class="w-48 flex justify-between px-4 mb-[-4px] z-10 no-print">
+                        <div id="item2-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[380px]">
+
+                            <div class="flex justify-between mb-[-4px] z-10 no-print" style="width: 240px; padding: 0 24px;">
                                 <div class="w-0.5 h-6 bg-slate-400"></div>
                                 <div class="w-0.5 h-6 bg-slate-400"></div>
                             </div>
 
-                            <!-- Main Aisle Header Card -->
-<!-- Main Aisle Header Card — matches printed board -->
-<div class="w-64 aspect-[24/20] bg-[#1e201d] rounded-sm shadow-xl relative overflow-hidden">
+                            <div id="aisle-header-stage"
+                                 class="relative shadow-xl rounded-sm"
+                                 style="width: 240px; aspect-ratio: 24 / 20;">
 
-    <!-- Botanical frond watermark -->
-    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 167"
-         preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-            <g id="aisle-frond">
-                <path d="M0,58 Q-9,28 0,-14" stroke="#000" stroke-width="2.5" fill="none"/>
-                <ellipse cx="-14" cy="42" rx="14" ry="5"   transform="rotate(-30 -14 42)"/>
-                <ellipse cx="14"  cy="38" rx="14" ry="5"   transform="rotate(30 14 38)"/>
-                <ellipse cx="-16" cy="26" rx="15" ry="5"   transform="rotate(-35 -16 26)"/>
-                <ellipse cx="16"  cy="22" rx="15" ry="5"   transform="rotate(35 16 22)"/>
-                <ellipse cx="-15" cy="9"  rx="14" ry="5"   transform="rotate(-40 -15 9)"/>
-                <ellipse cx="15"  cy="5"  rx="14" ry="5"   transform="rotate(40 15 5)"/>
-                <ellipse cx="-11" cy="-7" rx="12" ry="4.5" transform="rotate(-45 -11 -7)"/>
-                <ellipse cx="11"  cy="-11" rx="12" ry="4.5" transform="rotate(45 11 -11)"/>
-                <ellipse cx="-6"  cy="-21" rx="9"  ry="4"   transform="rotate(-50 -6 -21)"/>
-                <ellipse cx="6"   cy="-25" rx="9"  ry="4"   transform="rotate(50 6 -25)"/>
-            </g>
-        </defs>
-        <g fill="#000000" opacity="0.22">
-            <use href="#aisle-frond" transform="translate(52,92)"/>
-            <use href="#aisle-frond" transform="translate(148,92) scale(-1,1)"/>
-        </g>
-    </svg>
+                                <img id="aisle-header-artwork"
+                                     src="images/Aisle-Header-blank.png"
+                                     alt="Aisle header board base artwork"
+                                     class="absolute inset-0 w-full h-full object-cover rounded-sm"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/480x400/1e201d/ffffff?text=Upload+images/Aisle-Header-blank.png';">
 
-    <!-- Wooden mounting posts (sit behind the badge) -->
-    <div class="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 flex gap-[42px]">
-        <div class="w-2.5 h-[104px] bg-[#c9a86a] rounded-sm"></div>
-        <div class="w-2.5 h-[104px] bg-[#c9a86a] rounded-sm"></div>
-    </div>
-
-    <!-- Brand wordmark -->
-    <div class="absolute top-[17%] left-0 right-0 text-center z-10">
-        <span class="sackers-gothic text-[10px] text-[#eb642a] tracking-[0.18em] leading-none">
-            <strong class="text-[12px]">J</strong>AMALI<strong class="text-[12px]">G</strong>ARDEN
-        </span>
-    </div>
-
-    <!-- Aisle badge -->
-    <div class="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 z-20">
-        <div class="w-[82px] h-[82px] rounded-full bg-[#eb642a] ring-[3px] ring-[#d4af37]
-                    flex flex-col items-center justify-center shadow-lg">
-            <span class="text-[8px] font-bold text-white tracking-[0.22em] leading-none">AISLE</span>
-            <span id="aisle-num-display" class="font-bebas text-[38px] leading-[0.9] text-white">1</span>
-        </div>
-    </div>
-
-    <!-- Gold inner frame -->
-    <div class="absolute inset-[11px] border-2 border-[#d4af37] rounded-[2px] pointer-events-none"></div>
-
-    <!-- Corner grommets -->
-    <div class="absolute top-[7px] left-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
-        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
-    </div>
-    <div class="absolute top-[7px] right-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
-        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
-    </div>
-    <div class="absolute bottom-[7px] left-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
-        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
-    </div>
-    <div class="absolute bottom-[7px] right-[7px] w-3 h-3 rounded-full bg-slate-100 ring-1 ring-slate-400/70 flex items-center justify-center">
-        <div class="w-1 h-1 rounded-full bg-[#1e201d]"></div>
-    </div>
-
-</div>
-
-                            <!-- S-Hooks Connecting Links -->
-                            <div class="w-44 flex justify-between px-3 my-0.5 z-10">
-                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
-                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                                <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+                                     style="top: 58%; width: 96px; height: 96px;">
+                                    <div class="w-full h-full rounded-full bg-[#eb642a] ring-[3px] ring-[#d4af37] flex flex-col items-center justify-center shadow-lg">
+                                        <span class="font-bold text-white leading-none" style="font-size: 9px; letter-spacing: 0.22em;">AISLE</span>
+                                        <span id="aisle-num-display" class="font-bebas text-white leading-[0.9]" style="font-size: 44px;">1</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Modular Slat 1 -->
-                            <div class="w-52 bg-[#1e201d] border border-[#d4af37] text-white py-2 px-3 rounded shadow-md text-center relative">
-                                <div class="absolute top-1.5 left-2 w-2 h-2 rounded-full bg-amber-200"></div>
-                                <div class="absolute top-1.5 right-2 w-2 h-2 rounded-full bg-amber-200"></div>
-                                <span id="aisle-slat-1-text" class="font-bebas text-lg text-white tracking-wider block leading-none">CERAMICS & VASES</span>
-                                <span class="text-[8px] text-slate-400 block font-mono">20″ × 5″ PVC Slat</span>
+                            <div class="grid grid-cols-5 gap-1.5 mt-5 no-print" id="aisle-header-selector" style="width: 240px;">
+                                <button onclick="selectAisleHeader('a1', this)"  class="header-btn px-1 py-1.5 rounded border-2 border-[#1e201d] bg-[#1e201d] text-white font-bebas text-xs transition-all">Aisle 1</button>
+                                <button onclick="selectAisleHeader('a2', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 2</button>
+                                <button onclick="selectAisleHeader('a3', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 3</button>
+                                <button onclick="selectAisleHeader('a4', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 4</button>
+                                <button onclick="selectAisleHeader('a5', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 5</button>
+                                <button onclick="selectAisleHeader('a6', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 6</button>
+                                <button onclick="selectAisleHeader('a7', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 7</button>
+                                <button onclick="selectAisleHeader('a8', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 8</button>
+                                <button onclick="selectAisleHeader('a9', this)"  class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 9</button>
+                                <button onclick="selectAisleHeader('a10', this)" class="header-btn px-1 py-1.5 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 10</button>
                             </div>
 
-                            <!-- S-Hooks Connecting Links 2 -->
-                            <div class="w-44 flex justify-between px-3 my-0.5 z-10">
-                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
-                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
-                            </div>
-
-                            <!-- Modular Slat 2 -->
-                            <div class="w-52 bg-[#1e201d] border border-[#d4af37] text-white py-2 px-3 rounded shadow-md text-center relative">
-                                <div class="absolute top-1.5 left-2 w-2 h-2 rounded-full bg-amber-200"></div>
-                                <div class="absolute top-1.5 right-2 w-2 h-2 rounded-full bg-amber-200"></div>
-                                <span id="aisle-slat-2-text" class="font-bebas text-lg text-white tracking-wider block leading-none">FLORAL SUPPLIES</span>
-                                <span class="text-[8px] text-slate-400 block font-mono">20″ × 5″ PVC Slat</span>
-                            </div>
-                            
-                            <!-- Interactive Aisle Number Selector -->
-                            <div class="flex flex-wrap justify-center gap-1.5 mt-5 no-print" id="aisle-num-selector">
-                                <button onclick="updateAisleSystem(1, 'CERAMICS & VASES', 'FLORAL SUPPLIES', this)" class="aisle-btn px-2.5 py-1 rounded border-2 border-[#1e201d] bg-[#1e201d] text-white font-bebas text-xs transition-all">Aisle 1</button>
-                                <button onclick="updateAisleSystem(2, 'GLAZED POTS', 'PLANTERS', this)" class="aisle-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 2</button>
-                                <button onclick="updateAisleSystem(3, 'GLASSWARE', 'CANDLE HOLDERS', this)" class="aisle-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 3</button>
-                                <button onclick="updateAisleSystem(4, 'SILK FLOWERS', 'RIBBONS & FOAM', this)" class="aisle-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 4</button>
-                                <button onclick="updateAisleSystem(5, 'METAL CONTAINERS', 'BRASS VASES', this)" class="aisle-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Aisle 5</button>
-                            </div>
+                            <span class="text-xs text-slate-400 font-mono mt-3 text-center">
+                                24″ × 20″ 6mm PVC • Double-Sided UV Print
+                            </span>
                         </div>
 
-                        <!-- View B: Reference Photo Container -->
-                        <div id="item2-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[320px]">
+                        <div id="item2-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[380px]">
                             <div class="relative w-full max-w-md group">
-                                <img id="item2-img-tag" src="images/aisle-markers-ref.jpg" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/600x380/1e201d/ffffff?text=Upload+Reference+Image+to+images/aisle-markers-ref.jpg';" 
-                                     alt="Vendor Reference - Aisle Markers" 
-                                     class="w-full h-auto max-h-60 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <img id="item2-img-tag" src="images/aisle-header-ref.jpg"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x500/1e201d/ffffff?text=Upload+Reference+Image+to+images/aisle-header-ref.jpg';"
+                                     alt="Vendor Reference - Aisle Header Board"
+                                     class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                                    <span class="font-mono text-emerald-400">Path: images/aisle-markers-ref.jpg</span>
+                                    <span class="font-mono text-emerald-400">Path: images/aisle-header-ref.jpg</span>
                                     <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
                                         Test Local Image
                                         <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item2-img-tag')">
@@ -552,20 +472,156 @@
                                 </div>
                             </div>
                             <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
-                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Demonstrates double-sided grommet positioning and S-hook slat linking system.</span>
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: Physical install reference — confirm ceiling chain + corner grommet placement.</span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="shelf">
+            <!-- ============================================================ -->
+            <!-- ITEM 3: INTERLOCKING CATEGORY SLATS (24" wide)                -->
+            <!-- ============================================================ -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="aisle">
                 <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center space-x-3">
                         <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">3</span>
                         <div>
-                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 3: Shelf-Top Category Markers</h2>
+                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 3: Interlocking Category Slats</h2>
+                            <p class="text-xs text-slate-500">Modular 24″ Slat Cards Linked Below Aisle Headers via S-Hooks</p>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-[#eb642a] text-white shadow-sm">
+                        Modular Chain System (Unlimited Slats per Aisle)
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Slat Dimensions:</span>
+                                    <span class="font-bold text-slate-900">24″ W × 5″ H</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Material Spec:</span>
+                                    <span class="font-semibold text-emerald-700">3mm Expanded PVC Slats</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Width Match:</span>
+                                    <span class="font-bold text-[#eb642a]">Flush with 24″ Header Board</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Color System:</span>
+                                    <span class="font-medium text-slate-900">Dark Green <code class="text-xs font-mono">#1E201D</code> + Gold Border</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Modular Hardware:</span>
+                                    <span class="font-medium text-slate-900 text-right">4 Grommets per slat (2 top, 2 bottom) + Metal S-Hooks</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-purple-50 rounded-xl text-xs text-purple-900 border border-purple-200">
+                            <strong>Modular Detail:</strong> Slats are cut to the same 24″ width as the header so the vertical chain reads as one continuous column. Add or remove slats via S-hooks without reprinting the header.
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-3 no-print">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Interactive Slat Chain Blueprint</h3>
+                            <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                <button onclick="switchView('item3', 'mockup', this)" class="item3-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Slat Blueprint</button>
+                                <button onclick="switchView('item3', 'image', this)" class="item3-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                            </div>
+                        </div>
+
+                        <div id="item3-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[380px]">
+
+                            <div style="width: 240px;" class="bg-slate-300/70 border border-dashed border-slate-400 rounded-sm py-1.5 text-center">
+                                <span class="text-[9px] font-mono text-slate-600 uppercase tracking-widest">↑ 24″ Header Board Bottom Grommets</span>
+                            </div>
+
+                            <div class="flex justify-between my-0.5 z-10" style="width: 200px; padding: 0 12px;">
+                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                            </div>
+
+                            <div class="relative bg-[#1e201d] border border-[#d4af37] text-white rounded shadow-md flex items-center justify-center"
+                                 style="width: 240px; aspect-ratio: 24 / 5;">
+                                <div class="absolute top-1.5 left-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <div class="absolute top-1.5 right-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <div class="absolute bottom-1.5 left-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <div class="absolute bottom-1.5 right-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <span id="slat-1-text" class="font-bebas text-2xl text-white tracking-widest leading-none">CERAMICS & VASES</span>
+                            </div>
+
+                            <div class="flex justify-between my-0.5 z-10" style="width: 200px; padding: 0 12px;">
+                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                            </div>
+
+                            <div class="relative bg-[#1e201d] border border-[#d4af37] text-white rounded shadow-md flex items-center justify-center"
+                                 style="width: 240px; aspect-ratio: 24 / 5;">
+                                <div class="absolute top-1.5 left-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <div class="absolute top-1.5 right-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <div class="absolute bottom-1.5 left-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <div class="absolute bottom-1.5 right-3 w-2 h-2 rounded-full bg-amber-200"></div>
+                                <span id="slat-2-text" class="font-bebas text-2xl text-white tracking-widest leading-none">FLORAL SUPPLIES</span>
+                            </div>
+
+                            <div class="flex justify-between my-0.5 z-10" style="width: 200px; padding: 0 12px;">
+                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                                <div class="w-1 h-3 bg-amber-500 rounded-full"></div>
+                            </div>
+
+                            <div class="border-2 border-dashed border-slate-400 text-slate-500 rounded flex items-center justify-center"
+                                 style="width: 240px; aspect-ratio: 24 / 5;">
+                                <span class="font-bebas text-sm tracking-widest">+ ADDITIONAL SLAT</span>
+                            </div>
+
+                            <div class="flex flex-wrap justify-center gap-1.5 mt-5 no-print" id="slat-set-selector">
+                                <button onclick="updateSlatSet('CERAMICS & VASES', 'FLORAL SUPPLIES', this)"  class="slat-btn px-2.5 py-1 rounded border-2 border-[#1e201d] bg-[#1e201d] text-white font-bebas text-xs transition-all">Set A</button>
+                                <button onclick="updateSlatSet('GLAZED POTS', 'PLANTERS', this)"              class="slat-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Set B</button>
+                                <button onclick="updateSlatSet('GLASSWARE', 'CANDLE HOLDERS', this)"          class="slat-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Set C</button>
+                                <button onclick="updateSlatSet('SILK FLOWERS', 'RIBBONS & FOAM', this)"       class="slat-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Set D</button>
+                                <button onclick="updateSlatSet('METAL CONTAINERS', 'BRASS VASES', this)"      class="slat-btn px-2.5 py-1 rounded border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bebas text-xs transition-all">Set E</button>
+                            </div>
+                        </div>
+
+                        <div id="item3-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[380px]">
+                            <div class="relative w-full max-w-md group">
+                                <img id="item3-img-tag" src="images/slat-chain-ref.jpg"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e201d/ffffff?text=Upload+Reference+Image+to+images/slat-chain-ref.jpg';"
+                                     alt="Vendor Reference - Slat Chain"
+                                     class="w-full h-auto max-h-60 object-contain rounded-lg border border-slate-700 shadow-md">
+                                <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span class="font-mono text-emerald-400">Path: images/slat-chain-ref.jpg</span>
+                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                        Test Local Image
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item3-img-tag')">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-amber-300 font-medium">⚠️ VENDOR NOTE FOR MUKARAM: S-hook linking detail between slats and header.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- ITEM 4: SHELF-TOP CATEGORY MARKERS (was Item 3)               -->
+            <!-- ============================================================ -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="shelf">
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">4</span>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 4: Shelf-Top Category Markers</h2>
                             <p class="text-xs text-slate-500">Gondola Shelf Integration Text-Only Signage</p>
                         </div>
                     </div>
@@ -576,11 +632,10 @@
 
                 <div class="p-6 space-y-6">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                        <!-- Specs -->
                         <div class="lg:col-span-5 space-y-4">
                             <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
                                 <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
-                                
+
                                 <div class="space-y-2 text-sm">
                                     <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                         <span class="text-slate-500">Dimensions:</span>
@@ -610,36 +665,33 @@
                             </div>
                         </div>
 
-                        <!-- Live Interactive Category Preview & Photo Switcher -->
                         <div class="lg:col-span-7 flex flex-col justify-between">
                             <div class="flex items-center justify-between mb-3 no-print">
                                 <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
                                 <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
-                                    <button onclick="switchView('item3', 'mockup', this)" class="item3-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Interactive Mockup</button>
-                                    <button onclick="switchView('item3', 'image', this)" class="item3-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                                    <button onclick="switchView('item4', 'mockup', this)" class="item4-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">Interactive Mockup</button>
+                                    <button onclick="switchView('item4', 'image', this)" class="item4-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
                                 </div>
                             </div>
-                            
-                            <!-- View A: Interactive Mockup -->
-                            <div id="item3-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[180px]">
+
+                            <div id="item4-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[180px]">
                                 <div id="category-preview-card" class="w-full bg-[#1e201d] text-white border-y-4 border-[#eb642a] px-6 py-6 shadow-md text-center flex items-center justify-center rounded-sm transition-all duration-200">
                                     <span id="category-preview-text" class="font-bebas text-3xl sm:text-5xl tracking-widest leading-none uppercase text-white">CERAMIC VASES</span>
                                 </div>
                                 <span class="text-xs text-slate-400 font-mono mt-3">48″ × 6″ Text-Only PVC Board with Brand Orange Trim</span>
                             </div>
 
-                            <!-- View B: Reference Photo Container -->
-                            <div id="item3-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[180px]">
+                            <div id="item4-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[180px]">
                                 <div class="relative w-full max-w-md group">
-                                    <img id="item3-img-tag" src="images/shelf-top-ref.jpg" 
-                                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e201d/ffffff?text=Upload+Reference+Image+to+images/shelf-top-ref.jpg';" 
-                                         alt="Vendor Reference - Shelf-Top Markers" 
+                                    <img id="item4-img-tag" src="images/shelf-top-ref.jpg"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e201d/ffffff?text=Upload+Reference+Image+to+images/shelf-top-ref.jpg';"
+                                         alt="Vendor Reference - Shelf-Top Markers"
                                          class="w-full h-auto max-h-52 object-contain rounded-lg border border-slate-700 shadow-md">
                                     <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
                                         <span class="font-mono text-emerald-400">Path: images/shelf-top-ref.jpg</span>
                                         <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
                                             Test Local Image
-                                            <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item3-img-tag')">
+                                            <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item4-img-tag')">
                                         </label>
                                     </div>
                                 </div>
@@ -650,7 +702,6 @@
                         </div>
                     </div>
 
-                    <!-- Category Items Grid -->
                     <div>
                         <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Required Categories List (10 Items)</h3>
                         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5" id="category-list">
@@ -699,12 +750,15 @@
                 </div>
             </section>
 
+            <!-- ============================================================ -->
+            <!-- ITEM 5: ZONE TRANSITION MODULAR HEADER (was Item 4)           -->
+            <!-- ============================================================ -->
             <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="ceiling">
                 <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
                     <div class="flex items-center space-x-3">
-                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">4</span>
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">5</span>
                         <div>
-                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 4: Zone Transition Modular Header</h2>
+                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Item 5: Zone Transition Modular Header</h2>
                             <p class="text-xs text-slate-500">Ceiling Suspended Modular Graphic Header with Interchangeable Slat Cards</p>
                         </div>
                     </div>
@@ -714,11 +768,10 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
-                    <!-- Specs Column -->
                     <div class="lg:col-span-5 space-y-4">
                         <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Specifications</h3>
-                            
+
                             <div class="space-y-2 text-sm">
                                 <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
                                     <span class="text-slate-500">Dimensions:</span>
@@ -747,13 +800,12 @@
                             </div>
                         </div>
 
-                        <!-- Modular Design System Info Box -->
                         <div class="p-4 bg-purple-50 rounded-xl text-xs text-purple-950 border border-purple-200 space-y-3">
                             <strong class="font-bold block uppercase tracking-wide text-purple-900">3-Slot Interchangeable Card System</strong>
                             <p class="leading-relaxed text-slate-700">
                                 Holds <strong>3 internal white slots</strong> designed to receive interchangeable <strong>20″ × 6″ category cards</strong>, enabling rapid section updates without reprinting the main board.
                             </p>
-                            
+
                             <div class="pt-2 border-t border-purple-200 space-y-2">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                                     <div class="bg-white p-2.5 rounded border border-purple-200 shadow-sm">
@@ -778,19 +830,17 @@
                         </div>
                     </div>
 
-                    <!-- Visual Preview Column -->
                     <div class="lg:col-span-7 flex flex-col justify-between">
                         <div class="flex items-center justify-between mb-3 no-print">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Visual & Reference Specs</h3>
                             <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
-                                <button onclick="switchView('item4', 'mockup', this)" class="item4-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">CSS Blueprint</button>
-                                <button onclick="switchView('item4', 'image', this)" class="item4-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
+                                <button onclick="switchView('item5', 'mockup', this)" class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">CSS Blueprint</button>
+                                <button onclick="switchView('item5', 'image', this)" class="item5-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">Reference Photo</button>
                             </div>
                         </div>
 
-                        <!-- View A: Modular Wireframe Blueprint -->
-                        <div id="item4-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[320px]">
-                            
+                        <div id="item5-mockup-view" class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[320px]">
+
                             <div class="w-56 flex justify-between px-3 mb-[-6px] z-10 no-print">
                                 <div class="w-0.5 h-8 bg-slate-400"></div>
                                 <div class="w-0.5 h-8 bg-slate-400"></div>
@@ -805,7 +855,7 @@
                                     <span class="font-bebas text-2xl text-white block leading-none mt-1">STORE</span>
                                     <span class="text-[9px] font-semibold uppercase tracking-widest text-slate-400">Zone Transition Header</span>
                                 </div>
-                                
+
                                 <div class="space-y-2 my-3">
                                     <div class="p-2 border border-purple-400 bg-slate-800 text-center rounded flex items-center justify-between">
                                         <span class="text-[10px] font-mono text-purple-300 font-semibold">[Slot 1]</span>
@@ -833,18 +883,17 @@
                             <span class="text-xs text-slate-500 font-mono mt-3">24″ × 36″ 6mm PVC Board • Double-Sided (STORE / BACK AREA)</span>
                         </div>
 
-                        <!-- View B: Reference Photo Container -->
-                        <div id="item4-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[320px]">
+                        <div id="item5-image-view" class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[320px]">
                             <div class="relative w-full max-w-md group">
-                                <img id="item4-img-tag" src="images/zone-header-ref.jpg" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/1e201d/ffffff?text=Upload+Reference+Image+to+images/zone-header-ref.jpg';" 
-                                     alt="Vendor Reference - Zone Transition Header" 
+                                <img id="item5-img-tag" src="images/zone-header-ref.jpg"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x450/1e201d/ffffff?text=Upload+Reference+Image+to+images/zone-header-ref.jpg';"
+                                     alt="Vendor Reference - Zone Transition Header"
                                      class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
                                     <span class="font-mono text-emerald-400">Path: images/zone-header-ref.jpg</span>
                                     <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
                                         Test Local Image
-                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item4-img-tag')">
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item5-img-tag')">
                                     </label>
                                 </div>
                             </div>
@@ -856,341 +905,225 @@
                     </div>
                 </div>
             </section>
-<!-- ITEM 5: ANTI-SLIP CIRCULAR FLOOR DECALS -->
-            
 
-<!-- ITEM 5: ANTI-SLIP CIRCULAR FLOOR DECALS -->
-<section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="floor">
+            <!-- ============================================================ -->
+            <!-- ITEM 6: ANTI-SLIP CIRCULAR FLOOR DECALS (was Item 5)          -->
+            <!-- ============================================================ -->
+            <section class="sign-item bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all page-break-inside-avoid" data-category="floor">
 
-    <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
-        <div class="flex items-center space-x-3">
-            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">5</span>
-            <div>
-                <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">
-                    Item 5: Anti-Slip Circular Floor Decals
-                </h2>
-                <p class="text-xs text-slate-500">
-                    Commercial Floor Graphics with Live Collection URLs & QR Codes
-                </p>
-            </div>
-        </div>
-
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-[#eb642a] text-white shadow-sm">
-            4 Unique Circular Decals Total
-        </span>
-    </div>
-
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
-
-        <!-- LEFT COLUMN -->
-        <div class="lg:col-span-5 space-y-4">
-
-            <!-- Specifications -->
-            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
-
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                    Specifications
-                </h3>
-
-                <div class="space-y-2 text-sm">
-
-                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                        <span class="text-slate-500">Dimensions:</span>
-                        <span class="font-bold text-slate-900">
-                            36″ Diameter (Die-Cut Circle)
-                        </span>
-                    </div>
-
-                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                        <span class="text-slate-500">Media Spec:</span>
-                        <span class="font-semibold text-slate-900">
-                            Commercial-Grade Floor Vinyl
-                        </span>
-                    </div>
-
-                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                        <span class="text-slate-500">Safety Lamination:</span>
-                        <span class="font-bold text-emerald-700">
-                            UL-410 Certified Anti-Slip Overlaminate
-                        </span>
-                    </div>
-
-                    <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
-                        <span class="text-slate-500">Adhesive:</span>
-                        <span class="font-medium text-slate-900">
-                            High-Tack Removable (No residue)
-                        </span>
-                    </div>
-
-                    <div class="flex justify-between">
-                        <span class="text-slate-500">Resolution:</span>
-                        <span class="font-medium text-slate-900">
-                            1200+ DPI Direct Vector Print
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- Decal Collection Mapping List -->
-            <div class="p-3.5 bg-amber-50 rounded-xl text-xs text-amber-950 border border-amber-200 space-y-2">
-
-                <strong class="font-bold block uppercase tracking-wide text-amber-900">
-                    4 Target-Audience Segment Mappings:
-                </strong>
-
-                <ul class="space-y-2 text-slate-800">
-
-                    <!-- HOTEL -->
-                    <li class="p-2 bg-white rounded border border-amber-200">
-                        <div class="flex justify-between items-center">
-                            <strong class="text-slate-900">
-                                1. Hotel & Venue Essentials
-                            </strong>
-
-                            <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5c3d2e] text-white font-mono">
-                                #5C3D2E
-                            </span>
+                <div class="border-b border-slate-200 bg-slate-50/70 px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#1e201d] text-[#eb642a] font-bold text-sm border border-[#eb642a]">6</span>
+                        <div>
+                            <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">
+                                Item 6: Anti-Slip Circular Floor Decals
+                            </h2>
+                            <p class="text-xs text-slate-500">
+                                Commercial Floor Graphics with Live Collection URLs & QR Codes
+                            </p>
                         </div>
-
-                        <a href="https://www.jamaligarden.com/collections/vases"
-                           target="_blank"
-                           class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
-                            https://www.jamaligarden.com/collections/vases
-                        </a>
-                    </li>
-
-
-                    <!-- FLORIST -->
-                    <li class="p-2 bg-white rounded border border-amber-200">
-                        <div class="flex justify-between items-center">
-                            <strong class="text-slate-900">
-                                2. Florist Choice
-                            </strong>
-
-                            <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5e8329] text-white font-mono">
-                                #5E8329
-                            </span>
-                        </div>
-
-                        <a href="https://www.jamaligarden.com/collections/floral-supplies-ribbon-silk-flowers"
-                           target="_blank"
-                           class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
-                            https://www.jamaligarden.com/collections/floral-supplies-ribbon-silk-flowers
-                        </a>
-                    </li>
-
-
-                    <!-- EVENT -->
-                    <li class="p-2 bg-white rounded border border-amber-200">
-                        <div class="flex justify-between items-center">
-                            <strong class="text-slate-900">
-                                3. Event Planner Favorites
-                            </strong>
-
-                            <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5c3d2e] text-white font-mono">
-                                #5C3D2E
-                            </span>
-                        </div>
-
-                        <a href="https://www.jamaligarden.com/collections/lighting"
-                           target="_blank"
-                           class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
-                            https://www.jamaligarden.com/collections/lighting
-                        </a>
-                    </li>
-
-
-                    <!-- SET DESIGNER -->
-                    <li class="p-2 bg-white rounded border border-amber-200">
-                        <div class="flex justify-between items-center">
-                            <strong class="text-slate-900">
-                                4. Set Designer's Pick
-                            </strong>
-
-                            <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5c3d2e] text-white font-mono">
-                                #5C3D2E
-                            </span>
-                        </div>
-
-                        <a href="https://www.jamaligarden.com/collections/silk-plants"
-                           target="_blank"
-                           class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
-                            https://www.jamaligarden.com/collections/silk-plants
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-
-            <!-- Pre-Production Requirement Alert -->
-            <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-900">
-                <strong>Pre-Production Mandatory Requirement:</strong>
-                All vector QR codes embedded in floor decal artwork must be scanned and tested
-                on screen via smartphone camera prior to digital proof sign-off.
-            </div>
-
-        </div>
-
-
-        <!-- RIGHT COLUMN -->
-        <div class="lg:col-span-7 flex flex-col justify-between">
-
-            <!-- View Header -->
-            <div class="flex items-center justify-between mb-3 no-print">
-
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                    Visual & Reference Specs
-                </h3>
-
-                <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
-
-                    <button onclick="switchView('item5', 'mockup', this)"
-                            class="item5-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">
-                        Interactive Preview
-                    </button>
-
-                    <button onclick="switchView('item5', 'image', this)"
-                            class="item5-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">
-                        Reference Photo
-                    </button>
-
-                </div>
-            </div>
-
-
-            <!-- ========================================================= -->
-            <!-- VIEW A: ACTUAL ARTWORK PREVIEW -->
-            <!-- ========================================================= -->
-
-            <div id="item5-mockup-view"
-                 class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[300px]">
-
-                <!-- Actual artwork -->
-                <div class="w-full flex items-center justify-center">
-
-                    <img id="floor-decal-artwork"
-                         src="images/Hotel-and-Venue-essentials.png"
-                         alt="Hotel and Venue Essentials circular floor decal artwork"
-                         class="w-64 h-64 sm:w-72 sm:h-72 object-contain drop-shadow-xl transition-all duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x600/1e201d/ffffff?text=Artwork+Not+Found';">
-
-                </div>
-
-
-                <!-- Design Selector Buttons -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-5 w-full max-w-xl no-print"
-                     id="decal-design-selector">
-
-                    <button onclick="selectDecalDesign('hotel', this)"
-                            class="decal-btn px-2 py-2 rounded-lg border-2 border-[#1e201d] bg-[#1e201d] text-white text-xs font-semibold text-center transition-all">
-
-                        01. Hotel & Venue
-
-                    </button>
-
-
-                    <button onclick="selectDecalDesign('florist', this)"
-                            class="decal-btn px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
-
-                        02. Florist Choice
-
-                    </button>
-
-
-                    <button onclick="selectDecalDesign('event', this)"
-                            class="decal-btn px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
-
-                        03. Event Planner
-
-                    </button>
-
-
-                    <button onclick="selectDecalDesign('set', this)"
-                            class="decal-btn px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
-
-                        04. Set Designer
-
-                    </button>
-
-                </div>
-
-
-                <span class="text-xs text-slate-400 font-mono mt-3 text-center">
-                    36″ Diameter Circular Floor Decal (UL-410 Anti-Slip Laminate)
-                </span>
-
-            </div>
-
-
-            <!-- ========================================================= -->
-            <!-- VIEW B: REFERENCE PHOTO -->
-            <!-- ========================================================= -->
-
-            <div id="item5-image-view"
-                 class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[300px]">
-
-                <div class="relative w-full max-w-md group">
-
-                    <img id="item5-img-tag"
-                         src="images/36inFloorDecal4types.png"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x500/1e201d/ffffff?text=Upload+Reference+Image+to+images/36inFloorDecal4types.png';"
-                         alt="Vendor Reference - 4 Circular Floor Decals"
-                         class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
-
-                    <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-
-                        <span class="font-mono text-emerald-400">
-                            Path: images/36inFloorDecal4types.png
-                        </span>
-
-                        <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
-
-                            Test Local Image
-
-                            <input type="file"
-                                   accept="image/*"
-                                   class="hidden"
-                                   onchange="previewLocalImage(event, 'item5-img-tag')">
-
-                        </label>
-
                     </div>
 
-                </div>
-
-
-                <div class="mt-3 p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
-
-                    <span class="text-xs text-amber-300 font-medium">
-
-                        ⚠️ VENDOR PRODUCTION NOTE FOR MUKARAM:
-                        Produce as 4 SEPARATE individual 36″ circular die-cut decals
-                        (1 decal per design). Do NOT print as a single sheet containing 4 circles.
-
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-[#eb642a] text-white shadow-sm">
+                        4 Unique Circular Decals Total
                     </span>
-
                 </div>
 
-            </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6">
 
-        </div>
-    </div>
-</section>
+                    <div class="lg:col-span-5 space-y-4">
 
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                Specifications
+                            </h3>
 
-<!-- ========================================================= -->
-<!-- ITEM 5 ACTUAL ARTWORK SELECTOR -->
-<!-- ========================================================= -->
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Dimensions:</span>
+                                    <span class="font-bold text-slate-900">36″ Diameter (Die-Cut Circle)</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Media Spec:</span>
+                                    <span class="font-semibold text-slate-900">Commercial-Grade Floor Vinyl</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Safety Lamination:</span>
+                                    <span class="font-bold text-emerald-700">UL-410 Certified Anti-Slip Overlaminate</span>
+                                </div>
+                                <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                    <span class="text-slate-500">Adhesive:</span>
+                                    <span class="font-medium text-slate-900">High-Tack Removable (No residue)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-slate-500">Resolution:</span>
+                                    <span class="font-medium text-slate-900">1200+ DPI Direct Vector Print</span>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="p-3.5 bg-amber-50 rounded-xl text-xs text-amber-950 border border-amber-200 space-y-2">
+                            <strong class="font-bold block uppercase tracking-wide text-amber-900">
+                                4 Target-Audience Segment Mappings:
+                            </strong>
 
+                            <ul class="space-y-2 text-slate-800">
+                                <li class="p-2 bg-white rounded border border-amber-200">
+                                    <div class="flex justify-between items-center">
+                                        <strong class="text-slate-900">1. Hotel & Venue Essentials</strong>
+                                        <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5c3d2e] text-white font-mono">#5C3D2E</span>
+                                    </div>
+                                    <a href="https://www.jamaligarden.com/collections/vases"
+                                       target="_blank"
+                                       class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
+                                        https://www.jamaligarden.com/collections/vases
+                                    </a>
+                                </li>
+
+                                <li class="p-2 bg-white rounded border border-amber-200">
+                                    <div class="flex justify-between items-center">
+                                        <strong class="text-slate-900">2. Florist Choice</strong>
+                                        <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5e8329] text-white font-mono">#5E8329</span>
+                                    </div>
+                                    <a href="https://www.jamaligarden.com/collections/floral-supplies-ribbon-silk-flowers"
+                                       target="_blank"
+                                       class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
+                                        https://www.jamaligarden.com/collections/floral-supplies-ribbon-silk-flowers
+                                    </a>
+                                </li>
+
+                                <li class="p-2 bg-white rounded border border-amber-200">
+                                    <div class="flex justify-between items-center">
+                                        <strong class="text-slate-900">3. Event Planner Favorites</strong>
+                                        <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5c3d2e] text-white font-mono">#5C3D2E</span>
+                                    </div>
+                                    <a href="https://www.jamaligarden.com/collections/lighting"
+                                       target="_blank"
+                                       class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
+                                        https://www.jamaligarden.com/collections/lighting
+                                    </a>
+                                </li>
+
+                                <li class="p-2 bg-white rounded border border-amber-200">
+                                    <div class="flex justify-between items-center">
+                                        <strong class="text-slate-900">4. Set Designer's Pick</strong>
+                                        <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#5c3d2e] text-white font-mono">#5C3D2E</span>
+                                    </div>
+                                    <a href="https://www.jamaligarden.com/collections/silk-plants"
+                                       target="_blank"
+                                       class="text-[#eb642a] hover:underline font-mono text-[11px] block mt-1 truncate">
+                                        https://www.jamaligarden.com/collections/silk-plants
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-900">
+                            <strong>Pre-Production Mandatory Requirement:</strong>
+                            All vector QR codes embedded in floor decal artwork must be scanned and tested
+                            on screen via smartphone camera prior to digital proof sign-off.
+                        </div>
+
+                    </div>
+
+                    <div class="lg:col-span-7 flex flex-col justify-between">
+
+                        <div class="flex items-center justify-between mb-3 no-print">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                Visual & Reference Specs
+                            </h3>
+
+                            <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-medium">
+                                <button onclick="switchView('item6', 'mockup', this)"
+                                        class="item6-tab-btn px-2.5 py-1 rounded-md bg-white shadow-sm text-slate-900 font-semibold">
+                                    Interactive Preview
+                                </button>
+                                <button onclick="switchView('item6', 'image', this)"
+                                        class="item6-tab-btn px-2.5 py-1 rounded-md text-slate-600 hover:text-slate-900">
+                                    Reference Photo
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="item6-mockup-view"
+                             class="bg-slate-100 rounded-xl p-6 border border-slate-200 bg-grid-pattern flex flex-col items-center justify-center min-h-[300px]">
+
+                            <div class="w-full flex items-center justify-center">
+                                <img id="floor-decal-artwork"
+                                     src="images/Hotel-and-Venue-essentials.png"
+                                     alt="Hotel and Venue Essentials circular floor decal artwork"
+                                     class="w-64 h-64 sm:w-72 sm:h-72 object-contain drop-shadow-xl transition-all duration-300"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x600/1e201d/ffffff?text=Artwork+Not+Found';">
+                            </div>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-5 w-full max-w-xl no-print"
+                                 id="decal-design-selector">
+
+                                <button onclick="selectDecalDesign('hotel', this)"
+                                        class="decal-btn px-2 py-2 rounded-lg border-2 border-[#1e201d] bg-[#1e201d] text-white text-xs font-semibold text-center transition-all">
+                                    01. Hotel & Venue
+                                </button>
+
+                                <button onclick="selectDecalDesign('florist', this)"
+                                        class="decal-btn px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    02. Florist Choice
+                                </button>
+
+                                <button onclick="selectDecalDesign('event', this)"
+                                        class="decal-btn px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    03. Event Planner
+                                </button>
+
+                                <button onclick="selectDecalDesign('set', this)"
+                                        class="decal-btn px-2 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 text-xs font-semibold text-center transition-all">
+                                    04. Set Designer
+                                </button>
+                            </div>
+
+                            <span class="text-xs text-slate-400 font-mono mt-3 text-center">
+                                36″ Diameter Circular Floor Decal (UL-410 Anti-Slip Laminate)
+                            </span>
+                        </div>
+
+                        <div id="item6-image-view"
+                             class="hidden bg-slate-900/95 rounded-xl p-4 border border-slate-800 flex flex-col items-center justify-center min-h-[300px]">
+
+                            <div class="relative w-full max-w-md group">
+                                <img id="item6-img-tag"
+                                     src="images/36inFloorDecal4types.png"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x500/1e201d/ffffff?text=Upload+Reference+Image+to+images/36inFloorDecal4types.png';"
+                                     alt="Vendor Reference - 4 Circular Floor Decals"
+                                     class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
+
+                                <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+                                    <span class="font-mono text-emerald-400">Path: images/36inFloorDecal4types.png</span>
+                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
+                                        Test Local Image
+                                        <input type="file"
+                                               accept="image/*"
+                                               class="hidden"
+                                               onchange="previewLocalImage(event, 'item6-img-tag')">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
+                                <span class="text-xs text-amber-300 font-medium">
+                                    ⚠️ VENDOR PRODUCTION NOTE FOR MUKARAM:
+                                    Produce as 4 SEPARATE individual 36″ circular die-cut decals
+                                    (1 decal per design). Do NOT print as a single sheet containing 4 circles.
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
 
         </div>
     </main>
 
+    <!-- GitHub Assets Guide Modal -->
     <div id="image-guide-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden no-print">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 m-4 space-y-4">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
@@ -1207,15 +1140,21 @@
                 To show your reference photos directly on GitHub Pages for Mukaram, organize your GitHub repository like this:
             </p>
 
-            <div class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs leading-relaxed space-y-1">
+            <div class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs leading-relaxed space-y-1 overflow-x-auto">
                 <div class="text-emerald-400">📁 jamali-signage-repository/</div>
                 <div class="pl-4 text-slate-300">├── 📄 index.html</div>
                 <div class="pl-4 text-emerald-400">└── 📁 images/</div>
                 <div class="pl-8 text-slate-400">├── 🖼️ ceiling-suspended-ref.jpg</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ aisle-markers-ref.jpg</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ Aisle-Header-blank.png</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ aisle-header-ref.jpg</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ slat-chain-ref.jpg</div>
                 <div class="pl-8 text-slate-400">├── 🖼️ shelf-top-ref.jpg</div>
                 <div class="pl-8 text-slate-400">├── 🖼️ zone-header-ref.jpg</div>
-                <div class="pl-8 text-slate-400">└── 🖼️ 36inFloorDecal4types.png</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ 36inFloorDecal4types.png</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ Hotel-and-Venue-essentials.png</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ Florist-Choice.png</div>
+                <div class="pl-8 text-slate-400">├── 🖼️ Event-Planer-Favorites.png</div>
+                <div class="pl-8 text-slate-400">└── 🖼️ Set-Designers-Pick.png</div>
             </div>
 
             <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-xs text-emerald-950">
@@ -1236,121 +1175,6 @@
         </div>
     </footer>
 
-<script>
-
-    const decalArtworkData = {
-
-        hotel: {
-            image: "images/Hotel-and-Venue-essentials.png",
-            alt: "Hotel and Venue Essentials circular floor decal artwork"
-        },
-
-        florist: {
-            image: "images/Florist-Choice.png",
-            alt: "Florist Choice circular floor decal artwork"
-        },
-
-        event: {
-            image: "images/Event-Planer-Favorites.png",
-            alt: "Event Planner Favorites circular floor decal artwork"
-        },
-
-        set: {
-            image: "images/Set-Designers-Pick.png",
-            alt: "Set Designer's Pick circular floor decal artwork"
-        }
-
-    };
-
-
-    function selectDecalDesign(key, btnElement) {
-
-        const data = decalArtworkData[key];
-
-        if (!data) return;
-
-
-        const artwork = document.getElementById("floor-decal-artwork");
-
-        if (artwork) {
-
-            artwork.style.opacity = "0.35";
-
-            setTimeout(function () {
-
-                artwork.src = data.image;
-                artwork.alt = data.alt;
-
-                artwork.onload = function () {
-                    artwork.style.opacity = "1";
-                };
-
-                artwork.onerror = function () {
-
-                    artwork.onerror = null;
-
-                    artwork.src =
-                        "https://placehold.co/600x600/1e201d/ffffff?text=Artwork+Not+Found";
-
-                    artwork.style.opacity = "1";
-                };
-
-            }, 120);
-
-        }
-
-
-        /*
-         * Reset all selector buttons
-         */
-        const buttons =
-            document.querySelectorAll("#decal-design-selector .decal-btn");
-
-        buttons.forEach(function (btn) {
-
-            btn.classList.remove(
-                "bg-[#1e201d]",
-                "text-white",
-                "border-2",
-                "border-[#1e201d]"
-            );
-
-            btn.classList.add(
-                "bg-white",
-                "text-slate-700",
-                "border",
-                "border-slate-200"
-            );
-
-        });
-
-
-        /*
-         * Highlight selected design
-         */
-        if (btnElement) {
-
-            btnElement.classList.remove(
-                "bg-white",
-                "text-slate-700",
-                "border",
-                "border-slate-200"
-            );
-
-            btnElement.classList.add(
-                "bg-[#1e201d]",
-                "text-white",
-                "border-2",
-                "border-[#1e201d]"
-            );
-
-        }
-
-    }
-
-</script>
-
-    
     <script>
         // Initialize Lucide Icons
         document.addEventListener('DOMContentLoaded', () => {
@@ -1359,7 +1183,110 @@
             }
         });
 
-        // Switch Overpass Directional Side (Side A vs Side B)
+        // =========================================================
+        // Floor Decal artwork data + selector
+        // =========================================================
+        const decalArtworkData = {
+            hotel: {
+                image: "images/Hotel-and-Venue-essentials.png",
+                alt: "Hotel and Venue Essentials circular floor decal artwork"
+            },
+            florist: {
+                image: "images/Florist-Choice.png",
+                alt: "Florist Choice circular floor decal artwork"
+            },
+            event: {
+                image: "images/Event-Planer-Favorites.png",
+                alt: "Event Planner Favorites circular floor decal artwork"
+            },
+            set: {
+                image: "images/Set-Designers-Pick.png",
+                alt: "Set Designer's Pick circular floor decal artwork"
+            }
+        };
+
+        function selectDecalDesign(key, btnElement) {
+            const data = decalArtworkData[key];
+            if (!data) return;
+
+            const artwork = document.getElementById("floor-decal-artwork");
+            if (artwork) {
+                artwork.style.opacity = "0.35";
+                setTimeout(function () {
+                    artwork.src = data.image;
+                    artwork.alt = data.alt;
+                    artwork.onload = function () { artwork.style.opacity = "1"; };
+                    artwork.onerror = function () {
+                        artwork.onerror = null;
+                        artwork.src = "https://placehold.co/600x600/1e201d/ffffff?text=Artwork+Not+Found";
+                        artwork.style.opacity = "1";
+                    };
+                }, 120);
+            }
+
+            const buttons = document.querySelectorAll("#decal-design-selector .decal-btn");
+            buttons.forEach(function (btn) {
+                btn.classList.remove("bg-[#1e201d]", "text-white", "border-2", "border-[#1e201d]");
+                btn.classList.add("bg-white", "text-slate-700", "border", "border-slate-200");
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove("bg-white", "text-slate-700", "border", "border-slate-200");
+                btnElement.classList.add("bg-[#1e201d]", "text-white", "border-2", "border-[#1e201d]");
+            }
+        }
+
+        // =========================================================
+        // Aisle Header Board — dynamic number overlay (1–10)
+        // =========================================================
+        const aisleNumbers = {
+            a1: 1, a2: 2, a3: 3, a4: 4, a5: 5,
+            a6: 6, a7: 7, a8: 8, a9: 9, a10: 10
+        };
+
+        function selectAisleHeader(key, btnElement) {
+            const num = aisleNumbers[key];
+            if (num === undefined) return;
+
+            const display = document.getElementById("aisle-num-display");
+            if (display) display.textContent = num;
+
+            const buttons = document.querySelectorAll("#aisle-header-selector .header-btn");
+            buttons.forEach(function (btn) {
+                btn.classList.remove("bg-[#1e201d]", "text-white", "border-2", "border-[#1e201d]");
+                btn.classList.add("bg-white", "text-slate-800", "border", "border-slate-300", "hover:bg-slate-50");
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove("bg-white", "text-slate-800", "border", "border-slate-300", "hover:bg-slate-50");
+                btnElement.classList.add("bg-[#1e201d]", "text-white", "border-2", "border-[#1e201d]");
+            }
+        }
+
+        // =========================================================
+        // Slat category set selector
+        // =========================================================
+        function updateSlatSet(slat1, slat2, btnElement) {
+            const s1 = document.getElementById("slat-1-text");
+            const s2 = document.getElementById("slat-2-text");
+            if (s1) s1.textContent = slat1;
+            if (s2) s2.textContent = slat2;
+
+            const buttons = document.querySelectorAll("#slat-set-selector .slat-btn");
+            buttons.forEach(function (btn) {
+                btn.classList.remove("bg-[#1e201d]", "text-white", "border-2", "border-[#1e201d]");
+                btn.classList.add("bg-white", "text-slate-800", "hover:bg-slate-50", "border", "border-slate-300");
+            });
+
+            if (btnElement) {
+                btnElement.classList.remove("bg-white", "text-slate-800", "hover:bg-slate-50", "border", "border-slate-300");
+                btnElement.classList.add("bg-[#1e201d]", "text-white", "border-2", "border-[#1e201d]");
+            }
+        }
+
+        // =========================================================
+        // Overpass directional side toggle
+        // =========================================================
         function toggleOverpassSide(side) {
             const textElem = document.getElementById('overpass-sign-text');
             const arrowElem = document.getElementById('overpass-sign-arrow');
@@ -1380,7 +1307,9 @@
             if (window.lucide) lucide.createIcons();
         }
 
-        // Toggle View between Blueprint Mockup and Reference Photo
+        // =========================================================
+        // Toggle view between mockup and reference photo
+        // =========================================================
         function switchView(itemId, viewType, btnElement) {
             const mockupView = document.getElementById(`${itemId}-mockup-view`);
             const imageView = document.getElementById(`${itemId}-image-view`);
@@ -1405,22 +1334,24 @@
             }
         }
 
-        // Preview Local Image Uploaded directly in Browser
+        // =========================================================
+        // Preview local image in browser
+        // =========================================================
         function previewLocalImage(event, targetImgId) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     const imgTag = document.getElementById(targetImgId);
-                    if (imgTag) {
-                        imgTag.src = e.target.result;
-                    }
+                    if (imgTag) imgTag.src = e.target.result;
                 };
                 reader.readAsDataURL(file);
             }
         }
 
-        // Modal Controls
+        // =========================================================
+        // Modal controls
+        // =========================================================
         function openImageGuideModal() {
             document.getElementById('image-guide-modal').classList.remove('hidden');
         }
@@ -1429,7 +1360,9 @@
             document.getElementById('image-guide-modal').classList.add('hidden');
         }
 
-        // Filter Functionality
+        // =========================================================
+        // Filter functionality
+        // =========================================================
         function filterSigns(category, btnElement) {
             const items = document.querySelectorAll('.sign-item');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -1453,89 +1386,12 @@
             });
         }
 
-        // Interactive Floor Decal Design Selector matching Jamali Artwork
-
-
-
-function selectDecalDesign(key, btnElement) {
-    const data = decalArtworkData[key];
-
-    if (!data) return;
-
-    // Find the artwork image
-    const artwork = document.getElementById('floor-decal-artwork');
-
-    // Change the image
-    if (artwork) {
-        artwork.src = data.image;
-        artwork.alt = data.alt;
-    }
-
-    // Update selected button
-    const buttons = document.querySelectorAll('#decal-design-selector .decal-btn');
-
-    buttons.forEach(btn => {
-        btn.classList.remove(
-            'bg-[#1e201d]',
-            'text-white',
-            'border-2',
-            'border-[#1e201d]'
-        );
-
-        btn.classList.add(
-            'bg-white',
-            'text-slate-700',
-            'border',
-            'border-slate-200'
-        );
-    });
-
-    if (btnElement) {
-        btnElement.classList.remove(
-            'bg-white',
-            'text-slate-700',
-            'border',
-            'border-slate-200'
-        );
-
-        btnElement.classList.add(
-            'bg-[#1e201d]',
-            'text-white',
-            'border-2',
-            'border-[#1e201d]'
-        );
-    }
-}
-
-
-        // Interactive Aisle System Slat Selector
-        function updateAisleSystem(num, slat1, slat2, btnElement) {
-            const numDisplay = document.getElementById('aisle-num-display');
-            const slat1Display = document.getElementById('aisle-slat-1-text');
-            const slat2Display = document.getElementById('aisle-slat-2-text');
-
-            if (numDisplay) numDisplay.textContent = num;
-            if (slat1Display) slat1Display.textContent = slat1;
-            if (slat2Display) slat2Display.textContent = slat2;
-
-            const buttons = document.querySelectorAll('#aisle-num-selector .aisle-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-[#1e201d]', 'text-white', 'border-2', 'border-[#1e201d]');
-                btn.classList.add('bg-white', 'text-slate-800', 'hover:bg-slate-50', 'border', 'border-slate-300');
-            });
-
-            if (btnElement) {
-                btnElement.classList.remove('bg-white', 'text-slate-800', 'hover:bg-slate-50', 'border-slate-300');
-                btnElement.classList.add('bg-[#1e201d]', 'text-white', 'border-2', 'border-[#1e201d]');
-            }
-        }
-
-        // Interactive Shelf Category Selector
+        // =========================================================
+        // Shelf category preview selector
+        // =========================================================
         function updateCategoryPreview(btnElement, text) {
             const previewText = document.getElementById('category-preview-text');
-            if (previewText) {
-                previewText.textContent = text.toUpperCase();
-            }
+            if (previewText) previewText.textContent = text.toUpperCase();
 
             const buttons = document.querySelectorAll('#category-list .category-btn');
             buttons.forEach(btn => {
