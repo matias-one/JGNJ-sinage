@@ -93,10 +93,7 @@
                 </div>
 
                 <div class="flex items-center space-x-2 sm:space-x-3">
-                    <button onclick="openImageGuideModal()" class="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors border border-slate-200">
-                        <i data-lucide="folder-git-2" class="w-4 h-4 text-emerald-600"></i>
-                        <span class="hidden md:inline">GitHub Assets Guide</span>
-                    </button>
+
                     <button onclick="window.print()" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-[#1e201d] text-white hover:bg-slate-800 transition-colors shadow-sm border border-[#eb642a]/40">
                         <i data-lucide="printer" class="w-4 h-4 text-[#eb642a]"></i>
                         <span class="hidden sm:inline">Print Master Spec Sheet</span>
@@ -109,68 +106,87 @@
 
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
 
-        <!-- Global Brand Rules Banner -->
-        <div class="bg-[#1e201d] text-white rounded-2xl p-5 sm:p-6 mb-6 shadow-md border-l-8 border-[#eb642a]">
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                <div class="space-y-2">
-                    <div class="flex items-center space-x-2">
-                        <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#eb642a] text-white">
-                            Mandatory Brand Rules
-                        </span>
-                        <span class="text-xs text-slate-400">Updated Production Sheet</span>
-                    </div>
-                    <h2 class="text-xl font-bold tracking-tight text-white">Global Artwork & Typography Specifications</h2>
-                    <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-1">
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
-                            <span><strong>Brand Logo Typography:</strong> <code class="bg-slate-800 text-amber-300 px-1.5 py-0.5 rounded">Sackers Gothic</code> (First letters <strong class="text-white">J</strong> and <strong class="text-white">G</strong> in <em class="not-italic text-amber-200">JamaliGarden</em> must be formatted larger than remaining letters).</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
-                            <span><strong>Wayfinding & Category Typography:</strong> <code class="bg-slate-800 text-amber-300 px-1.5 py-0.5 rounded">Bebas Neue</code> (ALL CAPS, visual weight scaled to margins).</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
-                            <span><strong>Vector File Standard:</strong> Print shop must output directly from vector assets (<code class="text-amber-300">.AI</code> / <code class="text-amber-300">.EPS</code> / High-Res <code class="text-amber-300">.PDF</code>). Do not substitute fonts.</span>
-                        </li>
-                    </ul>
-                </div>
+<!-- Global Brand Rules Banner -->
+<div class="bg-[#1e201d] text-white rounded-2xl p-5 sm:p-6 mb-6 shadow-md border-l-8 border-[#eb642a]">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-2">
+            <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#eb642a] text-white">
+                    Mandatory Brand Rules
+                </span>
+                <span class="text-xs text-slate-400">Updated Production Sheet</span>
+            </div>
+            <h2 class="text-xl font-bold tracking-tight text-white">Global Artwork & Typography Specifications</h2>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-1">
+                <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
+                    <div class="space-y-2.5">
+                        <span><strong>Brand Logo Typography:</strong> <code class="bg-slate-800 text-amber-300 px-1.5 py-0.5 rounded">Sackers Gothic</code> (First letters <strong class="text-white">J</strong> and <strong class="text-white">G</strong> in <em class="not-italic text-amber-200">JamaliGarden</em> must be formatted larger than remaining letters).</span>
 
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 shrink-0">
-                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Official Brand Palette</span>
-                    <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-                        <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
-                            <span class="w-4 h-4 rounded bg-[#eb642a] border border-white/20"></span>
-                            <div>
-                                <span class="block text-[10px] text-slate-400">Brand Orange</span>
-                                <span class="text-amber-300 font-bold">#EB642A</span>
-                            </div>
+                        <div class="p-3 bg-slate-800/60 border border-slate-700 rounded-lg inline-flex flex-col items-start gap-2">
+                            <span class="text-[10px] text-slate-400 font-mono uppercase tracking-wider">
+                                Brand Lockup Reference — visual only, do not trace
+                            </span>
+                            <img src="images/jamaligarden-logo.png"
+                                 alt="Jamali Garden official logo lockup"
+                                 class="h-10 w-auto"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x120/1e201d/eb642a?text=JamaliGarden+Logo';">
+                            <span class="text-[10px] text-slate-500 font-mono leading-snug">
+                                Sackers Gothic • J &amp; G oversized • Final vector supplied by Jamali on request
+                            </span>
                         </div>
-                        <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
-                            <span class="w-4 h-4 rounded bg-[#1e201d] border border-white/40"></span>
-                            <div>
-                                <span class="block text-[10px] text-slate-400">Dark Green</span>
-                                <span class="text-amber-300 font-bold">#1E201D</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
-                            <span class="w-4 h-4 rounded bg-[#5c3d2e] border border-white/20"></span>
-                            <div>
-                                <span class="block text-[10px] text-slate-400">Accent Brown</span>
-                                <span class="text-amber-300 font-bold">#5C3D2E</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
-                            <span class="w-4 h-4 rounded bg-[#5e8329] border border-white/20"></span>
-                            <div>
-                                <span class="block text-[10px] text-slate-400">Accent Green</span>
-                                <span class="text-amber-300 font-bold">#5E8329</span>
-                            </div>
-                        </div>
+                    </div>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
+                    <span><strong>Wayfinding & Category Typography:</strong> <code class="bg-slate-800 text-amber-300 px-1.5 py-0.5 rounded">Bebas Neue</code> (ALL CAPS, visual weight scaled to margins).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
+                    <span><strong>Vector File Standard:</strong> Print shop must output directly from vector assets (<code class="text-amber-300">.AI</code> / <code class="text-amber-300">.EPS</code> / High-Res <code class="text-amber-300">.PDF</code>). Do not substitute fonts.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#eb642a] shrink-0 mt-0.5"></i>
+                    <span><strong>Logo File Request:</strong> The official Sackers Gothic logo vector is supplied by Jamali Garden on request. The PNG shown above is a visual reference only — do not trace, redraw, or redistribute the font file.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 shrink-0">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Official Brand Palette</span>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+                <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
+                    <span class="w-4 h-4 rounded bg-[#eb642a] border border-white/20"></span>
+                    <div>
+                        <span class="block text-[10px] text-slate-400">Brand Orange</span>
+                        <span class="text-amber-300 font-bold">#EB642A</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
+                    <span class="w-4 h-4 rounded bg-[#1e201d] border border-white/40"></span>
+                    <div>
+                        <span class="block text-[10px] text-slate-400">Dark Green</span>
+                        <span class="text-amber-300 font-bold">#1E201D</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
+                    <span class="w-4 h-4 rounded bg-[#5c3d2e] border border-white/20"></span>
+                    <div>
+                        <span class="block text-[10px] text-slate-400">Accent Brown</span>
+                        <span class="text-amber-300 font-bold">#5C3D2E</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded border border-slate-700">
+                    <span class="w-4 h-4 rounded bg-[#5e8329] border border-white/20"></span>
+                    <div>
+                        <span class="block text-[10px] text-slate-400">Accent Green</span>
+                        <span class="text-amber-300 font-bold">#5E8329</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <div class="bg-white rounded-xl border border-slate-200 p-4 sm:p-6 mb-6 sm:mb-8 shadow-sm">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200">
@@ -336,11 +352,7 @@
                                      alt="Vendor Reference - Aisle Header Board"
                                      class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                                    <span class="font-mono text-emerald-400">Path: images/aisle-header-ref.jpg</span>
-                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
-                                        Test Local Image
-                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item1-img-tag')">
-                                    </label>
+
                                 </div>
                             </div>
                             <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
@@ -479,11 +491,7 @@
                                      alt="Vendor Reference - Slat Chain"
                                      class="w-full h-auto max-h-60 object-contain rounded-lg border border-slate-700 shadow-md">
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                                    <span class="font-mono text-emerald-400">Path: images/slat-chain-ref.jpg</span>
-                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
-                                        Test Local Image
-                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item2-img-tag')">
-                                    </label>
+
                                 </div>
                             </div>
                             <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
@@ -569,11 +577,7 @@
                                          alt="Vendor Reference - Shelf-Top Markers"
                                          class="w-full h-auto max-h-52 object-contain rounded-lg border border-slate-700 shadow-md">
                                     <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                                        <span class="font-mono text-emerald-400">Path: images/shelf-top-ref.jpg</span>
-                                        <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
-                                            Test Local Image
-                                            <input type="file" accept="image/*" class="hidden" onchange="previewLocalImage(event, 'item3-img-tag')">
-                                        </label>
+
                                     </div>
                                 </div>
                                 <div class="mt-3 p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg text-center w-full">
@@ -832,14 +836,7 @@
                                      class="w-full h-auto max-h-64 object-contain rounded-lg border border-slate-700 shadow-md">
 
                                 <div class="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                                    <span class="font-mono text-emerald-400">Path: images/36inFloorDecal4types.png</span>
-                                    <label class="cursor-pointer text-indigo-400 hover:text-indigo-300 underline no-print">
-                                        Test Local Image
-                                        <input type="file"
-                                               accept="image/*"
-                                               class="hidden"
-                                               onchange="previewLocalImage(event, 'item4-img-tag')">
-                                    </label>
+
                                 </div>
                             </div>
 
@@ -859,49 +856,7 @@
         </div>
     </main>
 
-    <!-- GitHub Assets Guide Modal -->
-    <div id="image-guide-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 hidden no-print">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 m-4 space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                <div class="flex items-center space-x-2 text-emerald-800">
-                    <i data-lucide="folder-git-2" class="w-5 h-5"></i>
-                    <h3 class="font-bold text-lg text-slate-900">GitHub Image Structure Guide</h3>
-                </div>
-                <button onclick="closeImageGuideModal()" class="text-slate-400 hover:text-slate-600">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
 
-            <p class="text-sm text-slate-600 leading-relaxed">
-                To show your reference photos directly on GitHub Pages for Mukaram, organize your GitHub repository like this:
-            </p>
-
-            <div class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs leading-relaxed space-y-1 overflow-x-auto">
-                <div class="text-emerald-400">📁 jamali-signage-repository/</div>
-                <div class="pl-4 text-slate-300">├── 📄 index.html</div>
-                <div class="pl-4 text-emerald-400">└── 📁 images/</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ Aisle-Header-blank.png</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ aisle-header-ref.jpg</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ slat-chain-ref.jpg</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ shelf-top-ref.jpg</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ 36inFloorDecal4types.png</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ Hotel-and-Venue-essentials.png</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ Florist-Choice.png</div>
-                <div class="pl-8 text-slate-400">├── 🖼️ Event-Planer-Favorites.png</div>
-                <div class="pl-8 text-slate-400">└── 🖼️ Set-Designers-Pick.png</div>
-            </div>
-
-            <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-xs text-emerald-950">
-                💡 <strong>Instant Browser Preview:</strong> You can click <strong>"Test Local Image"</strong> on any item card right now to choose a photo from your computer and preview how it looks instantly inside the spec dashboard!
-            </div>
-
-            <div class="flex justify-end pt-2">
-                <button onclick="closeImageGuideModal()" class="px-4 py-2 bg-[#1e201d] text-white font-medium text-xs rounded-lg hover:bg-slate-800">
-                    Got it, Close Guide
-                </button>
-            </div>
-        </div>
-    </div>
 
     <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500 no-print">
         <div class="max-w-7xl mx-auto px-4">
@@ -1064,16 +1019,6 @@
             }
         }
 
-        // =========================================================
-        // Modal controls
-        // =========================================================
-        function openImageGuideModal() {
-            document.getElementById('image-guide-modal').classList.remove('hidden');
-        }
-
-        function closeImageGuideModal() {
-            document.getElementById('image-guide-modal').classList.add('hidden');
-        }
 
         // =========================================================
         // Filter functionality
